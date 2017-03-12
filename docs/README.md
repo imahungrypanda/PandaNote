@@ -3,7 +3,7 @@
 
 [Trello Link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://pandanote.herokuapp.com/
 [trello]: https://trello.com/b/BcGDAmMQ/fullstack-project
 
 
