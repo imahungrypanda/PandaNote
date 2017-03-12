@@ -1,10 +1,10 @@
 # PandaNote
-[PandaNote Live][heroku]
+[PandaNote Live (TBD)][heroku]
 
 [Trello Link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com
+[trello]: https://trello.com/b/BcGDAmMQ/fullstack-project
 
 
 ## Minimum Viable Product
