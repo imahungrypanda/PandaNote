@@ -12,7 +12,7 @@
     createNote: { errors: ["body can't be blank"] },
     tag: { errors: ["tag must have a name"] }
   },
-  note: {
+  notes: {
     1: {
       title: "title",
       body: "text goes in here",

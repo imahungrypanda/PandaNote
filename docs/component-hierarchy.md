@@ -66,7 +66,6 @@
 | "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
 | "/home/tag/:tagId/note/:notedId" | "TagContainer" |
 | "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
 | "/search" | "Search" |
 | "/new-notebook" | "NewNotebook" |
 | "/new-tag" | "NewTag" |
