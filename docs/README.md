@@ -26,7 +26,7 @@ PandaNote is a note taking app that is inspired by EverNote built using Ruby on 
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
+[wireframes]: wireframes
 [components]: component-hierarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
