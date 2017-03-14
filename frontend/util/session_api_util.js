@@ -13,7 +13,7 @@ export const login = (user) => (
     method: "POST",
     url: "api/session",
     // TODO: Check if this is the right way to be passing in a user or if user should be nested when it gets here.
-    data: {user: user}
+    data: user
   })
 )
 
