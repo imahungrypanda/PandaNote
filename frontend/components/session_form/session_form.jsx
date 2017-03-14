@@ -1,17 +1,28 @@
 import React from 'react';
+import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
-      this.state = { username: "", password: "" };
+      this.state = { username: "", password: "", modalIsOpen: true };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.openModal = this.openModal.bind(this);
   }
 
-  componentDidUpdate() {
-    if (this.props.loggedIn) {
-      this.props.router.push("/");
-    }
+  componentWillMount() {
+    Modal.setAppElement('body');
+ }
+
+ componentDidUpdate() {
+   if (this.props.loggedIn) {
+     this.props.router.push("/");
+     this.openModal();
+   }
+ }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
   }
 
   update(field) {
@@ -44,34 +55,35 @@ class SessionForm extends React.Component {
     );
   }
 
-
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to PandaNote!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
-          <div className="login-form">
+      <div>
+        <Modal isOpen={this.state.modalIsOpen} contentLabel="Modal" className="session-form-container" >
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            Welcome to PandaNote!
             <br/>
-            <label> Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="login-input" />
-            </label>
-            <br/>
-            <label> Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input" />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+            Please {this.props.formType} or {this.navLink()}
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <label> Username:
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  className="login-input" />
+              </label>
+              <br/>
+              <label> Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="login-input" />
+              </label>
+              <br/>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </Modal>
       </div>
     );
   }
