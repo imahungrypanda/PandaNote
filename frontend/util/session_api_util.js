@@ -12,7 +12,8 @@ export const login = (user) => (
   $.ajax({
     method: "POST",
     url: "api/session",
-    data: user
+    // TODO: Check if this is the right way to be passing in a user or if user should be nested when it gets here.
+    data: {user: user}
   })
 )
 
