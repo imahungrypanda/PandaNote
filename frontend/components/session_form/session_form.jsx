@@ -2,12 +2,25 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
 
+const modalStyle = {
+  content :{
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marignRight: '-50%',
+    transform: 'translate(50%, 50%)'
+
+  }
+}
+
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = { username: "", password: "", modalIsOpen: false };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount() {
@@ -23,6 +36,11 @@ class SessionForm extends React.Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+    this.props.router.push("/");
   }
 
   update(field) {
@@ -57,8 +75,11 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <Modal isOpen={this.state.modalIsOpen} contentLabel="Modal" className="session-form-container" >
+      <div className="auth-form">
+        <Modal isOpen={this.state.modalIsOpen}
+          style={modalStyle}
+          contentLabel="Modal"
+          className="auth-form-modal" >
           <form onSubmit={this.handleSubmit} className="login-form-box">
             Welcome to PandaNote!
             <br/>
@@ -80,7 +101,8 @@ class SessionForm extends React.Component {
                   className="login-input" />
               </label>
               <br/>
-              <input type="submit" value="Submit" />
+              <input className="button" type="submit" value="Submit" />
+              <button className="button" onClick={this.closeModal}>Cancel</button>
             </div>
           </form>
         </Modal>

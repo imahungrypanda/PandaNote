@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 const createLinks = () => (
   <nav className="session-links">
-    <Link to="/login">Login</Link>
+    <Link className="login-link" to="/login">Login</Link>
     &nbsp;&nbsp;
-    <Link to="/signup">Sign Up</Link>
+    <Link className="signup-link" to="/signup">Sign Up</Link>
   </nav>
 );
 

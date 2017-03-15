@@ -1,4 +1,4 @@
-html, div, h1, a, nav {
+html, body, div, h1, a, nav {
   margin: 0;
   padding: 0;
   border: 0;
@@ -7,22 +7,21 @@ html, div, h1, a, nav {
   font-style: inherit;
   font-size: 100%;
   font-family: inherit;
-  vertical-align: baseline;
-  text-decoration: none;
+  vertical-align: inherit;
+  text-decoration: inherit;
 }
 
 html {
-  position: relative;
-  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
 }
 
 img {
-  display: block;
   width: 100%;
   height: auto;
 }
 
-.group:after {
+html:after {
   content: "";
   display: block;
   clear: both;
