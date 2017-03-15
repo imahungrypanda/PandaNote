@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
+  has_many :notes
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)
