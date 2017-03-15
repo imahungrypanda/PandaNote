@@ -1,23 +1,41 @@
 .auth-form-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
   border: 2px solid black;
   border-radius: 3px;
   padding: 20px;
   text-align: center;
+  background-color: white;
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
   input {
     margin-top: 15px;
     background-color: white;
   }
+
+  .login-input {
+    height: 20px;
+  }
+
   .button {
     background-color: $dark-green;
     color: $tan;
     border: 1px solid black;
     border-radius: 2px;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     margin-top: 15px;
+
+
   }
-  .submit {
+
+  .demo {
       margin-right: 5px;
   }
+
   .cancel {
       margin-left: 5px;
   }

@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
-import sessionFormStyle from './session_form_styling';
-
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -74,14 +72,16 @@ class SessionForm extends React.Component {
     return (
       <div className="auth-form">
         <Modal isOpen={this.state.modalIsOpen}
-          style={sessionFormStyle}
           contentLabel="Modal"
-          className="auth-form-modal" >
+          className="auth-form-modal"
+          onRequestClose={this.closeModal} >
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
             Welcome to PandaNote!
             <br/>
-            Please {this.props.formType} or {this.navLink()}
+            Please {this.props.formType}
+            <br/>
+            or {this.navLink()}
 
             {this.renderErrors()}
 
@@ -89,26 +89,26 @@ class SessionForm extends React.Component {
               <br/>
 
               <input type="text"
+                className="login-input"
                 value={this.state.username}
                 onChange={this.update("username")}
-                className="login-input"
                 placeholder="Username" />
 
               <br/>
 
               <input type="password"
+                className="login-input"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="login-input"
                 placeholder="Password" />
 
               <br/>
 
-              <input className="button demo" type="button" value="Demo" onClick={this.demo} />
+              <input className="button submit" type="submit" value="Submit" />
 
               <br/>
 
-              <input className="button submit" type="submit" value="Submit" />
+              <input className="button demo" type="button" value="Demo" onClick={this.demo} />
               <input className="button cancel" type="button" value="Cancel" onClick={this.closeModal} />
             </div>
           </form>
