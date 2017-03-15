@@ -6,13 +6,13 @@ const App = ({ children }) => (
   <div>
     <header className="splash-container">
       <Link to="/" className="header-logo">
-        <img className="header-panda-logo" src="/assets/panda_logo.png" alt="logo"></img>
+        <img className="header-panda-logo" src="http://res.cloudinary.com/dbf0xwan5/image/upload/v1489603019/panda_logo_fhv0z7.png" alt="logo"></img>
         <h1 className="header-site-name">PandaNote</h1>
       </Link>
       <GreetingContainer />
     </header>
     <div>
-      <img className="splash-photo" src="/assets/splash_photo.jpg" alt="splash_photo"></img>
+      <img className="splash-photo" src="http://res.cloudinary.com/dbf0xwan5/image/upload/v1489603020/splash_photo_edza7r.jpg" alt="splash_photo"></img>
     </div>
     <footer className="splash-footer"></footer>
     { children }
