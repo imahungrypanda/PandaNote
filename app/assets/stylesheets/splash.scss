@@ -17,12 +17,17 @@ div {
 
 .session-links {
   float: right;
-  color: $tan;
+  a {
+    color: $tan;
+  }
 }
 
 .header-logo {
   display: flex;
   align-items: center;
+  h1 {
+    color: $tan;
+  }
 }
 
 .header-site-name {

@@ -15,7 +15,8 @@ const modalStyle = {
     right : '50%',
     bottom : '50%',
     width: '25%',
-    transform: 'translate(100%, 50%)'
+    transform: 'translate(100%, 50%)',
+    background: "white"
   }
 };
 
