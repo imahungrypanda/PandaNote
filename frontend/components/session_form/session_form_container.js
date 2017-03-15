@@ -3,10 +3,12 @@ import { login, logout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session }) => {
+  // console.log("Session: ", session);
+  return ({
   loggedIn: Boolean(session.currentUser),
   errors: session.errors
-});
+})};
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname.slice(1);

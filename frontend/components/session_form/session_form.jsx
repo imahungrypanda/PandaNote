@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = { username: "", password: "", modalIsOpen: false };
-      
+
       this.handleSubmit = this.handleSubmit.bind(this);
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = { user: Object.assign({}, this.state) };
+    const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
 
@@ -71,10 +71,10 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="auth-form-error">
         { this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>{ error }</li>
-          ))}
+          <li key={`error-${i}`}>{ error }</li>
+        ))}
       </ul>
     );
   }
@@ -91,7 +91,9 @@ class SessionForm extends React.Component {
             Welcome to PandaNote!
             <br/>
             Please {this.props.formType} or {this.navLink()}
+
             {this.renderErrors()}
+
             <div className="login-form">
               <br/>
 
