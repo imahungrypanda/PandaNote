@@ -5,13 +5,20 @@
   text-align: center;
   input {
     margin-top: 15px;
-    background-color: transp
+    background-color: white;
   }
   .button {
-    background-color: red;
-    color: #FFF8B5;
+    background-color: $dark-green;
+    color: $tan;
     border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
     margin-top: 15px;
-    margin-left: 5px;
+  }
+  .submit {
+      margin-right: 5px;
+  }
+  .cancel {
+      margin-left: 5px;
   }
 }

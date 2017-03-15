@@ -12,10 +12,10 @@ const modalStyle = {
   content: {
     top : '50%',
     left: '50%',
-    right : 'auto',
-    bottom : 'auto',
-    width: '250px',
-    transform: 'translate(50%, 50%)'
+    right : '50%',
+    bottom : '50%',
+    width: '25%',
+    transform: 'translate(100%, 50%)'
   }
 };
 
@@ -23,6 +23,7 @@ class SessionForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = { username: "", password: "", modalIsOpen: false };
+      
       this.handleSubmit = this.handleSubmit.bind(this);
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
@@ -93,22 +94,29 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <div className="login-form">
               <br/>
-              <label> Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  className="login-input" />
-              </label>
+
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                className="login-input"
+                placeholder="Username" />
+
               <br/>
-              <label>
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  className="login-input" />
-              </label>
+
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                className="login-input"
+                placeholder="Password" />
+
               <br/>
-              <input className="button" type="submit" value="Submit" />
-              <input className="button" type="submit" value="Cancel" onClick={this.closeModal} />
+
+              <input className="button demo" type="submit" value="Demo" />
+
+              <br/>
+
+              <input className="button submit" type="submit" value="Submit" />
+              <input className="button cancel" type="submit" value="Cancel" onClick={this.closeModal} />
             </div>
           </form>
         </Modal>
