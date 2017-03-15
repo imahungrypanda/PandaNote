@@ -1,24 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
+import sessionFormStyle from './session_form_styling';
 
-const modalStyle = {
-  overlay: {
-    top: '0%',
-    left: '0%',
-    right: '0',
-    bottom: '0',
-  },
-  content: {
-    top : '50%',
-    left: '50%',
-    right : '50%',
-    bottom : '50%',
-    width: '25%',
-    transform: 'translate(100%, 50%)',
-    background: "white"
-  }
-};
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -84,7 +68,7 @@ class SessionForm extends React.Component {
     return (
       <div className="auth-form">
         <Modal isOpen={this.state.modalIsOpen}
-          style={modalStyle}
+          style={sessionFormStyle}
           contentLabel="Modal"
           className="auth-form-modal" >
 
