@@ -10,10 +10,12 @@ const App = ({ children }) => (
         <h1 className="header-site-name">PandaNote</h1>
       </Link>
       <GreetingContainer />
-      { children }
     </header>
-    <content></content>
-    <footer></footer>
+    <div>
+      <img className="splash-photo" src="/assets/splash_photo.jpg" alt="splash_photo"></img>
+    </div>
+    <footer className="splash-footer"></footer>
+    { children }
   </div>
 );
 

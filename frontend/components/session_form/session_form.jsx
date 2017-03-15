@@ -3,16 +3,21 @@ import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
 
 const modalStyle = {
-  content :{
-    top: '50%',
+  overlay: {
+    top: '0%',
+    left: '0%',
+    right: '0',
+    bottom: '0',
+  },
+  content: {
+    top : '50%',
     left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marignRight: '-50%',
+    right : 'auto',
+    bottom : 'auto',
+    width: '250px',
     transform: 'translate(50%, 50%)'
-
   }
-}
+};
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -80,6 +85,7 @@ class SessionForm extends React.Component {
           style={modalStyle}
           contentLabel="Modal"
           className="auth-form-modal" >
+
           <form onSubmit={this.handleSubmit} className="login-form-box">
             Welcome to PandaNote!
             <br/>
@@ -94,7 +100,7 @@ class SessionForm extends React.Component {
                   className="login-input" />
               </label>
               <br/>
-              <label> Password:
+              <label>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
@@ -102,7 +108,7 @@ class SessionForm extends React.Component {
               </label>
               <br/>
               <input className="button" type="submit" value="Submit" />
-              <button className="button" onClick={this.closeModal}>Cancel</button>
+              <input className="button" type="submit" value="Cancel" onClick={this.closeModal} />
             </div>
           </form>
         </Modal>

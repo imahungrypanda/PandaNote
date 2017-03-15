@@ -10,9 +10,9 @@ const createLinks = () => (
 );
 
 const welcomeMessage = (currentUser, logout) => (
-  <div>
-    <h2>Welcome, {currentUser.username}!</h2>
-    <button onClick={logout}>Logout</button>
+  <div className="welcome-message">
+    <h2 className="personal-welcome">Welcome, {currentUser.username}!</h2>
+    <input className="" type="submit" value="Logout" onClick={logout} />
   </div>
 );
 

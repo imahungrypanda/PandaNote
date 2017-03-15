@@ -1,5 +1,17 @@
 .auth-form-modal {
   border: 2px solid black;
   border-radius: 3px;
-  padding: 10px;
+  padding: 20px;
+  text-align: center;
+  input {
+    margin-top: 15px;
+    background-color: transp
+  }
+  .button {
+    background-color: red;
+    color: #FFF8B5;
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-left: 5px;
+  }
 }
