@@ -1,0 +1,29 @@
+html, div, h1, a, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}

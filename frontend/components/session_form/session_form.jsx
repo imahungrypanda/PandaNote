@@ -5,19 +5,19 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
-      this.state = { username: "", password: "", modalIsOpen: true };
+      this.state = { username: "", password: "", modalIsOpen: false };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.openModal = this.openModal.bind(this);
   }
 
   componentWillMount() {
+    this.openModal();
     Modal.setAppElement('body');
  }
 
  componentDidUpdate() {
    if (this.props.loggedIn) {
      this.props.router.push("/");
-     this.openModal();
    }
  }
 

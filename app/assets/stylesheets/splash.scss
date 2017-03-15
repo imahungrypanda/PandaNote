@@ -1,0 +1,30 @@
+.splash-container {
+  color: tan;
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+}
+
+.session-links {
+  display: block;
+  align-items: center;
+}
+
+.splash-container h1 {
+  display: flex;
+  font-size: 24px;
+  font-style: bold;
+  margin: auto;
+  align-items: center;
+}
+
+img.panda-logo {
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: white;
+  width: 75px;
+  margin: 5px;
+  padding: 5px;
+}
