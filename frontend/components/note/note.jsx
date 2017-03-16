@@ -17,32 +17,45 @@ class Note extends React.Component {
   render () {
     return (
       <div className="note-container">
-        
+
         <aside className="sidebar">
           <section className="sidebar-logo">
             <img className="logo" src="http://res.cloudinary.com/dbf0xwan5/image/upload/v1489603019/panda_logo_fhv0z7.png" alt="logo"></img>
           </section>
 
           <section className="sidebar-new-note">
-            <img className="new-note-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489684767/plus_yfk9un.png" alt="new-note"></img>
+            <img className="new-note-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png" alt="new-note"></img>
           </section>
 
+
           <section className="sidebar-actions">
-            <img className="notes-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489684767/note_lh9a6u.png" alt="notes"></img>
-            <img className="notebook-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489684767/notebook_jjgcyh.png" alt="notebooks"></img>
-            <img className="tags-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489684767/price-tag_ddv6gg.png" alt="tags"></img>
+            <img className="notes-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png" alt="notes"></img>
+            <img className="notebook-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png" alt="notebooks"></img>
+            <img className="tags-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png" alt="tags"></img>
           </section>
 
           <section className="user-profile">
-            <img className="user-profile-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489684767/user_v22kdp.png" alt="profile"></img>
+            <img className="user-profile-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489696563/user_copy_rfe19e.png" alt="profile"></img>
           </section>
 
+<input className="" type="button" value="Logout" onClick={this.noteLogout} />
         </aside>
 
-        <section className="notes-index"></section>
 
 
-    <input className="" type="button" value="Logout" onClick={this.noteLogout} />
+        <section className="notes-index">
+          <ul>
+            <li>
+              <header>Notes Index</header>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <section className="notes-editor"></section>
+
+
 
 
 

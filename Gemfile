@@ -40,6 +40,11 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'quiet_assets'
+
+  gem "guard", ">= 2.2.2", :require => false
+  gem "guard-livereload",  :require => false
+  gem "rack-livereload"
+  gem "rb-fsevent",        :require => false
 end
 
 group :development do
