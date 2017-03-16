@@ -20,4 +20,9 @@ This document will hold all the bugs and solutions that I encounter during the d
 ***
 #### Not rendering errors when trying to login or signup
 **Issue:** When trying to login or signup with in correct credentials no errors were being rendered.
-**Correction:** Working my way backwards through the redux cycle I found that in the session reducer I was not correctly setting the errors. I needed to get the responseJSON from the errors. 
+**Correction:** Working my way backwards through the redux cycle I found that in the session reducer I was not correctly setting the errors. I needed to get the responseJSON from the errors.
+
+***
+#### Header elements did not want to stay in the header box
+**Issue:** Elements in the header were jumping out of the div that was containing them.
+**Correction:** I gave every tag it's own class name then used display flex on the containing box. Everything worked after that. 
