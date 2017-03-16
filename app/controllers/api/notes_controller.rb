@@ -1,11 +1,12 @@
 class Api::NotesController < ApplicationController
   def index
-    @notes = Notes.all
+    # debugger
+    @notes = Note.all
     render :index
   end
 
   def show
-    @note = Notes.find_by(params[:id])
+    @note = Note.find(params[:id])
     render :show
   end
 
@@ -20,7 +21,7 @@ class Api::NotesController < ApplicationController
   end
 
   def update
-    @note = Notes.find_by(params[:id])
+    @note = Note.find(params[:id])
 
     if @note.update_attributes(note_params)
       render :show
@@ -30,10 +31,10 @@ class Api::NotesController < ApplicationController
   end
 
   def destroy
-    @note = Notes.find_by(params[:id])
+    @note = Note.find(params[:id])
 
     if @note
-
+      @note.delete
       render :show
     else
       render( json: ["Nothing to delete"], status: 404)
