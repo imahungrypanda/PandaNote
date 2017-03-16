@@ -1,8 +1,1 @@
-
-
-
-
-title: "title",
-body: "text goes in here",
-user_id: 1,
-notebook_id: 1,
+json.notes @notes, :id, :title, :body, :user_id, :notebook_id, :archived, :created_at
