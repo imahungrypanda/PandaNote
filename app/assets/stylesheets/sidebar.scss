@@ -1,12 +1,9 @@
 .note-container {
-  display: block;
-  width: 10%;
-
-
-  background-color: $light-green;
+  display: flex;
 
   .sidebar {
-    height: 100%;
+    width: 75px;
+    background-color: $light-green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

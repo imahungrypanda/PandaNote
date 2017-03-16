@@ -1,4 +1,4 @@
-html, body, main, div, h1, a, nav, footer, img, button, aside, section {
+html, body, main, div, h1, a, nav, footer, img, button, aside, section, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,6 +20,13 @@ html, body, main, div {
 img {
   width: 100%;
   height: auto;
+}
+
+ul li {
+  list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
 }
 
 html:after {

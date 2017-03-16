@@ -13,11 +13,11 @@ const App = ({ children }) => (
       </Link>
       <GreetingContainer />
     </header>
-    <div>
+    <section>
       <img className="splash-photo"
         src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_40/v1489603020/splash_photo_edza7r.jpg"
         alt="splash_photo"></img>
-    </div>
+    </section>
     <footer className="splash-footer"></footer>
     { children }
   </div>
