@@ -12,6 +12,7 @@
     "npm": "3.10.10"
   },
   "scripts": {
+    
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "dependencies": {
