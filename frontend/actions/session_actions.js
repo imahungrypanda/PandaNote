@@ -9,11 +9,11 @@ export const login = user => dispatch => (
           err => dispatch(receiveErrors(err)))
 );
 
-export const logout = () => dispatch => {(
+export const logout = () => dispatch => (
   APIUTIL.logout()
     .then(() => dispatch(receiveCurrentUser(null)),
           err => dispatch(receiveErrors(err.responseJSON)))
-)};
+);
 
 export const signup = user => dispatch => {(
   APIUTIL.signup(user)

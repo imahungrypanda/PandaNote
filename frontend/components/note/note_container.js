@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-// import { login, logout, signup } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 import Note from './note';
 
 const mapStateToProps = ({ session }) => ({
-  session,
-  errors: session.errors
+  session
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  logout: () => dispatch(logout())
 })
 
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Note);

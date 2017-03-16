@@ -18,21 +18,21 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const current_user = store.getState().session.currentUser;
     if (current_user) {
-      replace("/");
+      replace("/home");
     }
   };
 
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ App } >
+        <Route path="/" component={ App } onEnter={ _redirectIfLoggedIn }>
 
           <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
           <Route path="/signup" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
 
-          <Route path="/home" component={ NoteContainer } onEnter={ _ensureLoggedin } />
         </Route>
 
+        <Route path="/home" component={ NoteContainer } onEnter={ _ensureLoggedin } />
 
       </Router>
     </Provider>
