@@ -1,11 +1,13 @@
 .index {
   float: right;
-  width: 302px;
+  width: 200px;
   overflow: scroll;
+  flex-shrink: 0;
 
   .notes-index-header {
     position: fixed;
-    width: 216px;
+    left: 102px;
+    width: 199px;
     height: 100px;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -28,14 +30,10 @@
       overflow: hidden;
 
       div {
-        margin: 5px;
-
         section {
           margin-top: 3px;
           margin-left: 5px;
           margin-right: 15px;
-
-
 
           header {
             font: Helvetica;
@@ -53,16 +51,22 @@
             font-size: 10px;
             color: grey;
 
-
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
           }
         }
+      }
+
+    }
+    li:hover {
+      background-color: $dark-green;
+      border-color: $green;
+      color: $tan;
+      p{
+        color: $tan;
       }
     }
   }
