@@ -2,12 +2,16 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Note from './note';
 
-const mapStateToProps = ({ session }) => ({
-  session
+import { fetchNotes } from '../../actions/notes_actions';
+
+const mapStateToProps = ({ session, notes }) => ({
+  session,
+  notes
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  fetchNotes: () => dispatch(fetchNotes())
 })
 
 

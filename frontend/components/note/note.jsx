@@ -13,14 +13,17 @@ const style = {
 class Note extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props.fetchNotes());
 
-    this.state = { modalIsOpen: false }
+    this.state = { notes: this.props.fetchNotes, modalIsOpen: false }
+    console.log(this.state.notes);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.noteLogout = this.noteLogout.bind(this);
   }
 
   componentWillMount() {
+
     Modal.setAppElement('body');
   }
 

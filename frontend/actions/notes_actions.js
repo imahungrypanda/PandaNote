@@ -1,9 +1,9 @@
 import * as APIUTIL from '../util/notes_api_util';
 
-export const "RECIEVE_ALL_NOTES" = "RECIEVE_ALL_NOTES";
-export const "RECIEVE_NOTE"      = "RECIEVE_NOTE";
-export const "UPDATE_NOTE"       = "UPDATE_NOTE";
-export const "DELETE_NOTE"       = "DELETE_NOTE";
+export const RECIEVE_ALL_NOTES = "RECIEVE_ALL_NOTES";
+export const RECIEVE_NOTE      = "RECIEVE_NOTE";
+export const UPDATE_NOTE       = "UPDATE_NOTE";
+export const DELETE_NOTE       = "DELETE_NOTE";
 
 export const fetchNotes = () => dispatch => (
   APIUTIL.fetchNotes()
@@ -25,12 +25,12 @@ export const deleteNote = note => dispatch => (
     .then(nt => dispatch(recieveNote()))
 );
 
-export const recieveNotes = notes => (
+export const recieveNotes = notes => ({
   type: RECIEVE_ALL_NOTES,
   notes
-);
+});
 
-export const receiveNote = note => (
+export const receiveNote = note => ({
   type: RECIEVE_NOTE,
   note
-);
+});

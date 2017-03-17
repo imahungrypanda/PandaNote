@@ -5,7 +5,14 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
+import { fetchNotes, fetchNote, updateNote, deleteNote
+} from './actions/notes_actions';
 
+
+window.fetchNotes = fetchNotes;
+window.fetchNote = fetchNote;
+window.updateNote = updateNote;
+window.deleteNote = deleteNote;
 
 
 document.addEventListener("DOMContentLoaded", () => {
