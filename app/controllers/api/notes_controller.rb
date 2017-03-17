@@ -1,7 +1,7 @@
 class Api::NotesController < ApplicationController
   def index
-    # debugger
-    @notes = Note.all
+    # NOTE: params need to be "user[id]"
+    @notes = Note.where("user_id = ?", params[:user][:id])
     render :index
   end
 
