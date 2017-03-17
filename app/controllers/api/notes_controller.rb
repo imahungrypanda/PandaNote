@@ -1,7 +1,6 @@
 class Api::NotesController < ApplicationController
   def index
-    # NOTE: params need to be "user[id]"
-    @notes = Note.where("user_id = ?", params[:user][:id])
+    @notes = Note.where("user_id = ?", current_user.id.to_s)
     render :index
   end
 
@@ -44,6 +43,7 @@ class Api::NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:title, :body, :user_id, :notebook_id)
+    # debugger
+    params.require(:note).permit(:title, :body, :user_id, :notebook_id, :archived)
   end
 end

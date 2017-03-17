@@ -15,11 +15,11 @@ export const logout = () => dispatch => (
           err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const signup = user => dispatch => {(
+export const signup = user => dispatch => (
   APIUTIL.signup(user)
     .then(usr => dispatch(receiveCurrentUser(usr)),
           err => dispatch(receiveErrors(err.responseJSON)))
-)};
+);
 
 export const receiveCurrentUser = currentUser => ({
   type: RECIEVE_CURRENT_USER,
