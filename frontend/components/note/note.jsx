@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 const style = {
   overlay: {
+
     backgroundColor: "none"
   }
 };
@@ -28,6 +29,7 @@ class Note extends React.Component {
   }
 
   closeModal() {
+    console.log("close");
     this.setState({modalIsOpen: false});
   }
 
