@@ -1,6 +1,8 @@
 .note-container {
   display: inline-flex;
   border: 1px solid black;
+  height: 100%;
+  width: 100%;
 
   .sidebar {
     flex-shrink: 0;
@@ -47,7 +49,24 @@
 
     .user-profile {
       width: 50px;
-      margin-top: 150px
+      margin-top: 150px;
+
     }
   }
+}
+
+.user-profile-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  margin-top: 65%;
+  margin-left: 130px;
+  transform: translateX(-50%);
 }

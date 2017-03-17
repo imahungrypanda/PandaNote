@@ -22,22 +22,27 @@
     height: 20px;
   }
 
-  .button {
+
+  .submit {
     background-color: $dark-green;
-    color: $tan;
-    border: 1px solid black;
-    border-radius: 2px;
-    padding: 5px 10px 5px 10px;
-    margin-top: 15px;
-
-
   }
-
+  
   .demo {
-      margin-right: 5px;
+    background-color: $dark-green;
+    margin-right: 5px;
   }
 
   .cancel {
-      margin-left: 5px;
+    background-color: $dark-green;
+    margin-left: 5px;
   }
+}
+
+.button {
+  background-color: $dark-green;
+  color: $tan;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 15px;
 }
