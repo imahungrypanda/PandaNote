@@ -1,8 +1,10 @@
 .note-container {
   display: flex;
+  border: 1px solid black;
 
   .sidebar {
-    width: 75px;
+    border: 1px solid black;
+    width: 100px;
     background-color: $light-green;
     display: flex;
     flex-direction: column;

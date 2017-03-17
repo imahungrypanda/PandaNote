@@ -1,15 +1,24 @@
 .index {
   float: right;
   width: 302px;
+  overflow: scroll;
+
+  .notes-index-header {
+    position: fixed;
+    width: 216px;
+    height: 100px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 100;
+  }
 
   .notes-index {
-    .notes-index-header {
+    ul {
       position: relative;
-      top: 2px;
-      left: 10px;
-      font-family: 'Cookie', cursive;
-      font-size: 32px;
-      margin-right: 15px;
+      top: 100px;
     }
     li {
       height: 100px;
@@ -40,7 +49,7 @@
           }
           p {
             position: relative;
-            
+
             font-size: 10px;
             color: grey;
 
