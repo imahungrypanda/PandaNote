@@ -8,34 +8,66 @@ const style = {
   }
 };
 
+
 class Sidebar extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = { modalIsOpen: false };
+    this.state = {
+      userModal: false,
+      notebookModal: false,
+      newNotebookModal: false,
+      tagsModal: false,
+      newTagModal: false,
+      newNotebookName: ""
+     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.closeUserModal = this.closeUserModal.bind(this);
+    this.closeNotebookModal = this.closeNotebookModal.bind(this);
+    this.closeNewNotebookModal = this.closeNewNotebookModal.bind(this);
+    this.closeTagsModal = this.closeTagsModal.bind(this);
+    this.closeNewTagModal = this.closeNewTagModal.bind(this);
     this.noteLogout = this.noteLogout.bind(this);
+    this.notesHome = this.notesHome.bind(this);
   }
 
   componentWillMount() {
     Modal.setAppElement('body');
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
+  closeUserModal() {
+    this.setState({userModal: false});
   }
 
-  closeModal() {
-    console.log("close");
-    this.setState({modalIsOpen: false});
+  closeNotebookModal() {
+    this.setState({notebookModal: false});
+  }
+
+  closeNewNotebookModal() {
+    this.setState({noteNewbookModal: false});
+  }
+
+  closeTagsModal() {
+    this.setState({tagsModal: false});
+  }
+
+  closeNewTagModal() {
+    this.setState({tagModal: false});
   }
 
   noteLogout() {
-    console.log(this.props.logout);
     this.props.logout()
       .then(() => hashHistory.replace('/'));
+  }
+
+  notesHome() {
+    hashHistory.replace('/home');
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   render() {
@@ -51,23 +83,68 @@ class Sidebar extends React.Component {
         </section>
 
         <section className="sidebar-actions">
-          <img className="notes-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png" alt="notes"></img>
-          <img className="notebook-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png" alt="notebooks"></img>
-          <img className="tags-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png" alt="tags"></img>
+          <img className="notes-icon"
+            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
+            alt="notes"
+            onClick={this.notesHome}></img>
+
+
+
+          <img className="notebook-icon"
+            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
+            alt="notebooks"
+            onClick={() => this.setState({notebookModal: true})}></img>
+
+          <Modal
+            isOpen={this.state.newNotebookModal}
+            contentLabel="Modal"
+            className="new-notebook-modal"
+
+            onRequestClose={this.closeNewNotebookModal}>
+
+            <form className="new-notebook-form">
+              <p>CREATE NOTEBOOK</p>
+              <input type="text"
+                className="new-notebook-name"
+                value={this.state.newNotebookName}
+                onChange={this.update("newNotebookName")}
+                placeholder="Notebook Title" />
+              <input className="button" type="button" value="Cancel" onClick={this.closeNotebookModal}/>
+              <input className="button" type="button" value="Create Notebook" onClick={""}/>
+            </form>
+          </Modal>
+
+
+
+          <img className="tags-icon"
+            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png"
+            alt="tags"
+            onClick={() => this.setState({tagsModal: true})}></img>
+          <Modal
+            isOpen={this.state.tagsModal}
+            contentLabel="Modal"
+            className="tags-modal"
+
+            onRequestClose={this.closeTagsModal}>
+            <input className="button" type="button" value="Logout" onClick={this.noteLogout} />
+          </Modal>
+
         </section>
+
+
 
         <section className="user-profile">
           <img className="user-profile-icon"
             src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489696563/user_copy_rfe19e.png"
             alt="profile"
-            onClick={this.openModal}></img>
+            onClick={() => this.setState({userModal: true})}></img>
 
           <Modal
-            isOpen={this.state.modalIsOpen}
+            isOpen={this.state.userModal}
             contentLabel="Modal"
             className="user-profile-modal"
             style={style}
-            onRequestClose={this.closeModal}>
+            onRequestClose={this.closeUserModal}>
             <input className="button" type="button" value="Logout" onClick={this.noteLogout} />
           </Modal>
         </section>

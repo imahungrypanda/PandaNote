@@ -12,16 +12,17 @@ const style = {
 class Note extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
 
   }
 
 
 
   render () {
-    // let notes = "";
+    let notes = "";
     //
-    // if (this.props.notes) {
-    //   console.log(this.props.notes);
+    if (this.props.notes) {
+      console.log(this.props.notes);
     //
     //   notes = Object.keys(this.props.notes).map(note => (
     //     <li>
@@ -34,8 +35,8 @@ class Note extends React.Component {
     //       </div>
     //     </li>
     //   ))
-    // }
-    // console.log(notes);
+    }
+    console.log(notes);
 
     return (
 
