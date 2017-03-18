@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router';
 
 const style = {
   overlay: {
-
     backgroundColor: "none"
   }
 };
@@ -13,18 +12,22 @@ const style = {
 class Note extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.fetchNotes());
 
-    this.state = { notes: this.props.fetchNotes, modalIsOpen: false }
-    console.log(this.state.notes);
+    this.state = { modalIsOpen: false };
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.noteLogout = this.noteLogout.bind(this);
   }
 
   componentWillMount() {
-
+    this.props.fetchNotes();
+    console.log(this.props);
     Modal.setAppElement('body');
+  }
+
+  componentDidMount() {
+    this.props.fetchNotes();
   }
 
   openModal() {
@@ -43,6 +46,25 @@ class Note extends React.Component {
   }
 
   render () {
+    // let notes = "";
+    //
+    // if (this.props.notes) {
+    //   console.log(this.props.notes);
+    //
+    //   notes = Object.keys(this.props.notes).map(note => (
+    //     <li>
+    //       <div>
+    //         <section>
+    //           <header>{note.title}</header>
+    //           <time>9:00am</time>
+    //           <p>{note.body}</p>
+    //         </section>
+    //       </div>
+    //     </li>
+    //   ))
+    // }
+    // console.log(notes);
+
     return (
       <div className="note-container">
 
@@ -88,6 +110,11 @@ class Note extends React.Component {
 
           <ul className="notes-index">
             <li></li>
+
+
+
+
+
             <li>
               <div>
                 <section>

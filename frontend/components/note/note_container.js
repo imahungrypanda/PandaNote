@@ -2,18 +2,21 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Note from './note';
 
-import { fetchNotes } from '../../actions/notes_actions';
+import { fetchNotes, fetchNote } from '../../actions/notes_actions';
 
-const mapStateToProps = ({ session, notes }) => ({
-  session,
-  notes
-});
+const mapStateToProps = (state, ownProps) => {
+
+  console.log("notes-container", state);
+  return ({
+    currentUser: state.session.currentUser,
+    notes: state.notes
+})};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchNotes: () => dispatch(fetchNotes())
+  fetchNotes: () => dispatch(fetchNotes()),
+  fetchNote: note => dispatch(fetchNote(note))
 })
-
 
 export default connect(
   mapStateToProps,

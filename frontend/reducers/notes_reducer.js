@@ -9,8 +9,8 @@ const NotesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECIEVE_ALL_NOTES:
       const notes = action.notes;
-      console.log(notes);
-      return merge({}, state, notes);
+      const newState = merge({}, state, notes);
+      return newState;
 
     case RECIEVE_NOTE:
       const note = action.note;
