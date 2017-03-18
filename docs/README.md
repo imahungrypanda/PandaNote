@@ -11,8 +11,8 @@
 PandaNote is a note taking app that is inspired by EverNote built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Production README
-- [ ] New account creation, login, and guest/demo login
-- [ ] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
+- [x] Hosting on Heroku
 - [ ] Notes
 - [ ] Notebooks for organizing notes
 - [ ] Tags

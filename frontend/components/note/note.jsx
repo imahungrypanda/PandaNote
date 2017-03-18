@@ -43,7 +43,7 @@ class Note extends React.Component {
             </div>
           </li>
         )
-      })
+      }).reverse();
     }
 
     return (
@@ -51,11 +51,13 @@ class Note extends React.Component {
 
         <section className="index">
           <header className="notes-index-header">Notes</header>
-          <ul className="notes-index">
+          <section className="notes-index-container">
+            <ul className="notes-index">
 
-            {notes}
+              {notes}
 
-          </ul>
+            </ul>
+          </section>
 
         </section>
     )

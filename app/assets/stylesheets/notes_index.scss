@@ -1,73 +1,67 @@
 .index {
-  width: 200px;
-  overflow: scroll;
+  width: 300px;
+
 
   .notes-index-header {
-  
-    left: 103px;
-    width: 198px;
+
+
+    width: 298px;
     height: 100px;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: lighter;
     background-color: white;
     border: 1px solid black;
-    z-index: 100;
   }
+}
 
-  .notes-index {
-    ul {
-      position: relative;
-      top: 100px;
+.notes-index-container {
+  overflow-y: scroll;
+  height: 90vh;
+}
 
-    }
-    li {
-      height: 100px;
 
-      border: 1px solid black;
-      background-color: white;
-      overflow: hidden;
+.notes-index {
+  li {
 
-      div {
-        section {
-          margin-top: 3px;
-          margin-left: 5px;
-          margin-right: 15px;
+    height: 113px;
 
-          header {
-            font: Helvetica;
-            font-weight: lighter;
-          }
-          time {
-            position: relative;
-            font-size: 9px;
-            bottom: 8px;
+    border: 1px solid black;
+    background-color: white;
+    overflow: hidden;
 
-          }
-          p {
-            position: relative;
+    div {
+      section {
+        header {
+          font: Helvetica;
+          font-weight: lighter;
+        }
+        time {
+          position: relative;
+          font-size: 9px;
 
-            font-size: 10px;
-            color: grey;
+        }
+        p {
+          font-size: 10px;
+          color: grey;
 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-          }
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
         }
       }
-
     }
-    li:hover {
-      background-color: $dark-green;
-      border-color: $green;
-      color: $tan;
-      p{
-        color: $tan;
 
-      }
+  }
+  li:hover {
+    background-color: $dark-green;
+    border-color: $green;
+    color: $tan;
+    p{
+      color: $tan;
+
     }
   }
 }
