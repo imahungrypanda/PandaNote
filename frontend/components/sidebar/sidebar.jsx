@@ -11,7 +11,6 @@ const style = {
 class Sidebar extends React.Component {
   constructor(props){
     super(props);
-    console.log(props);
 
     this.state = { modalIsOpen: false };
 

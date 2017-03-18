@@ -1,8 +1,6 @@
 .index {
-  float: right;
   width: 200px;
   overflow: scroll;
-  flex-shrink: 0;
 
   .notes-index-header {
     position: fixed;
@@ -21,6 +19,7 @@
     ul {
       position: relative;
       top: 100px;
+
     }
     li {
       height: 100px;
