@@ -29,6 +29,7 @@ class Sidebar extends React.Component {
     this.closeNewTagModal = this.closeNewTagModal.bind(this);
     this.noteLogout = this.noteLogout.bind(this);
     this.notesHome = this.notesHome.bind(this);
+    this.createNote = this.createNote.bind(this);
   }
 
   componentWillMount() {
@@ -64,6 +65,16 @@ class Sidebar extends React.Component {
     hashHistory.replace('/home');
   }
 
+  createNote() {
+    const blankNote = {
+      title: "Untitled",
+      body: " ",
+      notebook_id: 0,
+      user_id: this.props.currentUser.id
+    }
+    this.props.createNote(blankNote);
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -79,7 +90,10 @@ class Sidebar extends React.Component {
         </section>
 
         <section className="sidebar-new-note">
-          <img className="new-note-icon" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png" alt="new-note"></img>
+          <img className="new-note-icon"
+            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
+            alt="new-note"
+            onClick={this.createNote}></img>
         </section>
 
         <section className="sidebar-actions">

@@ -6,7 +6,7 @@ import { fetchNotes, fetchNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-  console.log("notes-container", state);
+  // console.log("notes-container", state);
   return ({
     currentUser: state.session.currentUser,
     notes: state.notes

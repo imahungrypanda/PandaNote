@@ -12,13 +12,13 @@ export const fetchNote = id => (
   })
 );
 
-export const createNote = note => {
-  return $.ajax({
+export const createNote = note => (
+  $.ajax({
     method: "POST",
     url: "/api/notes",
     data: { note }
-  });
-};
+  })
+);
 
 export const updateNote = note => (
   $.ajax({

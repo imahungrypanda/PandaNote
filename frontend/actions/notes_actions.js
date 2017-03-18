@@ -15,6 +15,11 @@ export const fetchNote = note => dispatch => (
     .then(nt => dispatch(recieveNote(nt)))
 );
 
+export const createNote = note => dispatch => (
+  APIUTIL.createNote(note)
+    .then(nt => dispatch(recieveNote(nt)))
+)
+
 export const updateNote = note => dispatch => (
   APIUTIL.updateNote(note)
     .then(nt => dispatch(recieveNote(nt)))
@@ -30,7 +35,7 @@ export const recieveNotes = notes => ({
   notes
 });
 
-export const receiveNote = note => ({
+export const recieveNote = note => ({
   type: RECIEVE_NOTE,
   note
 });
