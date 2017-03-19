@@ -21,8 +21,10 @@ class Note extends React.Component {
   }
 
   deleteNote(note) {
-    return (() =>
-      this.props.deleteNote(note)
+    return (() => {
+      this.props.deleteNote(note);
+      this.forceUpdate();
+    }
     )
   }
 
@@ -35,12 +37,17 @@ class Note extends React.Component {
       notes = this.props.notes
 
       notes = Object.keys(notes).map(id => {
+        console.log(id, ": ", new Date(notes[id].created_at));
+        const created = notes[id].created_at;
+        console.log(created);
+        let date = new Date(created);
+
         return (
           <li key={id}>
             <div>
               <section>
                 <header>{notes[id].title}<img className="delete-note" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694282/note_ejjuma.png" onClick={this.deleteNote(notes[id])}/></header>
-                <time>{Date(notes[id].created_at)}</time>
+                <time>{date}</time>
                 <p>{notes[id].body}</p>
               </section>
             </div>
