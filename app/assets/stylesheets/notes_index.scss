@@ -1,23 +1,22 @@
 .index {
   width: 300px;
-
+  border: 1px solid black;
 
   .notes-index-header {
-
-
-    width: 298px;
+    width: 250;
     height: 100px;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: lighter;
     background-color: white;
-    border: 1px solid black;
+    border-bottom: 1px solid grey;
+    padding: 13px 25px 13px 25px;
   }
 }
 
 .notes-index-container {
   overflow-y: scroll;
-  height: 90vh;
+  height: 84vh;
 }
 
 
@@ -26,15 +25,24 @@
 
     height: 113px;
 
-    border: 1px solid black;
+    border: 3px solid transparent;
+
     background-color: white;
     overflow: hidden;
 
     div {
       section {
         header {
+          display: flex;
           font: Helvetica;
           font-weight: lighter;
+          justify-content: space-between;
+          img {
+
+            margin-left: 45px;
+            width: 15px;
+            height: 15px;
+          }
         }
         time {
           position: relative;
