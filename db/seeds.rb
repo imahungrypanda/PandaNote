@@ -13,3 +13,6 @@ text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 25.times do |i|
   Note.create(title: "test#{i}", body: text, user_id: 6, notebook_id: 0)
 end
+25.times do |i|
+  Note.create(title: "test#{i}", body: text, user_id: 1, notebook_id: 0)
+end
