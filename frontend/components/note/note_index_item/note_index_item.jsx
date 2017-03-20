@@ -12,10 +12,10 @@ class NoteIndexItem extends React.Component {
   }
 
   deleteNote(note) {
-    return () => {
+    return (() => {
+      this.props.setCurrentNote(null);
       this.props.deleteNote(note);
-      console.log(note);
-    }
+    })
   }
 
   setCurrentNote(note) {
@@ -29,9 +29,8 @@ class NoteIndexItem extends React.Component {
   selected() {
     if (this.props.currentNote && this.props.currentNote.id === this.props.note.id) {
       return "selected";
-    } else {
-      return "";
     }
+    return "";
   }
 
   render () {

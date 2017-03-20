@@ -30,6 +30,8 @@ const NotesReducer = (state = _nullState, action) => {
 
     case DELETE_NOTE:
       delete newState.allNotes[action.deletedNote.id];
+      const keys = Object.keys(newState.allNotes);
+      newState.currentNote = newState.allNotes[keys[0]];
       return newState;
 
     case CURRENT_NOTE:
