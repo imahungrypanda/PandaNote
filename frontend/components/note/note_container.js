@@ -8,14 +8,10 @@ import { fetchNotes,
          setCurrentNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
-  // let notes = Object.keys(state.notes.allNotes).map(id => state.notes.allNotes[id]);
-  // console.log("notes-container", state.notes);
-  // notes.forEach(note => console.log(note));
-  // console.log("allnotes", state.notes.allNotes);
+  let notes = Object.keys(state.notes.allNotes).map(id => state.notes.allNotes[id]);
   return ({
     currentUser: state.session.currentUser,
-    notes: state.notes.allNotes,
+    notes: notes,
     currentNote: state.notes.currentNote
   }
 )};
@@ -23,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   fetchNotes: () => dispatch(fetchNotes()),
-  fetchNote: note => dispatch(fetchNote(note))
+  fetchNote: note => dispatch(fetchNote(note)),
+  setCurrentNote: note => dispatch(setCurrentNote(note))
 })
 
 export default connect(

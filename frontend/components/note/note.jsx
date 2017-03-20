@@ -15,10 +15,25 @@ class Note extends React.Component {
   constructor(props) {
     super(props);
 
+    this.setCurrentNote = this.setCurrentNote.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchNotes();
+  }
+
+  componentWillReceiveProps() {
+    if (!this.props.currentNote) {
+      this.props.setCurrentNote(this.props.notes[0]);
+    }
+  }
+
+  setCurrentNote(note) {
+    return (e) => {
+      this.props.currentNote.className = "";
+      this.props.setCurrentNote(note);
+      e.currentTarget.className = "selected";
+    }
   }
 
   render () {

@@ -8,7 +8,7 @@ import { notesToArray } from '../actions/selector';
 
 let _nullState = {
   currentNote: null,
-  allNotes: []
+  allNotes: {}
 };
 
 const NotesReducer = (state = _nullState, action) => {
@@ -17,24 +17,22 @@ const NotesReducer = (state = _nullState, action) => {
 
   switch (action.type) {
     case RECIEVE_ALL_NOTES:
-      const allNotes = notesToArray(action.notes);
-      return merge(newState, {allNotes});
+      newState.allNotes = action.notes;
+      return newState;
 
     case RECIEVE_NOTE:
       newState.currentNote = action.note;
       return newState;
 
     case MAKE_NOTE:
-      newState[action.newNote.note.id] = action.newNote.note;
-      newState.allNotes.unshift(action.newNote.note);
+      newState.allNotes[action.newNote.id] = action.newNote;
       return newState;
 
     case DELETE_NOTE:
-      delete newState[action.deletedNote.note.id];
+      delete newState.allNotes[action.deletedNote.id];
       return newState;
 
     case CURRENT_NOTE:
-      console.log(action);
       newState.currentNote = action.note;
       return newState;
 
