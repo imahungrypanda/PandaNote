@@ -26,11 +26,13 @@ class SessionForm extends React.Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
+    this.props.clearErrors();
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
     this.props.router.push("/");
+    this.props.clearErrors();
   }
 
   update(field) {
