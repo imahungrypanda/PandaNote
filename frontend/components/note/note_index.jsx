@@ -37,8 +37,6 @@ class NoteIndex extends React.Component {
   }
 
   render () {
-    console.log(this.props);
-
     return (
         <section className="index">
           <header className="notes-index-header">Notes</header>
