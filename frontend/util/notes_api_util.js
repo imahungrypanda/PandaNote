@@ -6,7 +6,6 @@ export const fetchNotes = () => (
 
 export const fetchNote = id => (
   $.ajax({
-    method: "GET",
     url: `/api/notes/${id}`,
     data: id
   })
