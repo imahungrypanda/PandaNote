@@ -25,4 +25,19 @@ This document will hold all the bugs and solutions that I encounter during the d
 ***
 #### Header elements did not want to stay in the header box
 **Issue:** Elements in the header were jumping out of the div that was containing them.
-**Correction:** I gave every tag it's own class name then used display flex on the containing box. Everything worked after that. 
+**Correction:** I gave every tag it's own class name then used display flex on the containing box. Everything worked after that.
+
+***
+#### Heroku showed that my app was down
+**Issue:** When you would go to Heroku the app was not there. All that showed up was a message that said the app had gone down and to look at the log for more information.
+**Correction:** The issue was from me trying out new ways to format the date on each note. How I had left it threw an error which cased the whole thing to be down.
+
+***
+#### Adding notes would not cause a render
+**Issue:** When spamming the add button only one note would appear until the page was refreshed.
+**Correction:** I needed to add a new action to when the api call was making a new note so that it would update the state.
+
+***
+#### Deleting notes would not cause a render
+**Issue:** When spamming the delete button no note would disappear until the page was refreshed.
+**Correction:** Pretty much needed to do the same thing as with the add button.

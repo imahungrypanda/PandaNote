@@ -2,8 +2,10 @@ import * as APIUTIL from '../util/notes_api_util';
 
 export const RECIEVE_ALL_NOTES = "RECIEVE_ALL_NOTES";
 export const RECIEVE_NOTE      = "RECIEVE_NOTE";
+export const MAKE_NOTE         = "MAKE_NOTE";
 export const UPDATE_NOTE       = "UPDATE_NOTE";
 export const DELETE_NOTE       = "DELETE_NOTE";
+export const CURRENT_NOTE      = "CURRENT_NOTE";
 
 export const fetchNotes = () => dispatch => (
   APIUTIL.fetchNotes()
@@ -17,7 +19,7 @@ export const fetchNote = note => dispatch => (
 
 export const createNote = note => dispatch => (
   APIUTIL.createNote(note)
-    .then(nt => dispatch(recieveNote(nt)))
+    .then(nt => dispatch(makeNote(nt)))
 )
 
 export const updateNote = note => dispatch => (
@@ -27,7 +29,7 @@ export const updateNote = note => dispatch => (
 
 export const deleteNote = note => dispatch => (
   APIUTIL.deleteNote(note.id)
-    .then(nt => dispatch(recieveNote()))
+    .then(nt => dispatch(removeNote(nt)))
 );
 
 export const recieveNotes = notes => ({
@@ -38,4 +40,14 @@ export const recieveNotes = notes => ({
 export const recieveNote = note => ({
   type: RECIEVE_NOTE,
   note
+});
+
+export const makeNote = newNote => ({
+  type: MAKE_NOTE,
+  newNote
+})
+
+export const removeNote = (deletedNote) => ({
+    type: DELETE_NOTE,
+    deletedNote
 });
