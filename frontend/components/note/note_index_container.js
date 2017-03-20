@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Note from './note';
+import NoteIndex from './note_index';
 
 import { fetchNotes,
          fetchNote,
@@ -26,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Note);
+)(NoteIndex);

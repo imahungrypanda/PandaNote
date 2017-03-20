@@ -11,7 +11,7 @@ const style = {
 };
 
 
-class Note extends React.Component {
+class NoteIndex extends React.Component {
   constructor(props) {
     super(props);
 
@@ -55,7 +55,4 @@ class Note extends React.Component {
   }
 }
 
-export default Note;
-
-
-  // {this.props.notes.map(note => <NoteIndexItemContainer note={note} />)}
+export default NoteIndex;

@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import Greeting from './greeting/greeting';
 import { Link } from 'react-router';
 
 const App = ({ children }) => (
@@ -11,7 +11,7 @@ const App = ({ children }) => (
           alt="logo"></img>
         <h1 className="header-site-name">PandaNote</h1>
       </Link>
-      <GreetingContainer />
+      <Greeting />
     </header>
     <section>
       <img className="splash-photo"
