@@ -51,10 +51,12 @@ This document will hold all the bugs and solutions that I encounter during the d
 **Correction:** Pretty much needed to do the same thing as with the add button.
 
 ***
+
 #### Note index some times shows another users notes
 **Issue:** When logging out and then in to another account sometimes in the index list there are notes from the previous user listed.
 
-**Correction:**
+**Correction:** The solution is the clear out the store when a user logs out.
+- [ ] http://stackoverflow.com/questions/35622588/how-to-reset-the-state-of-a-redux-store
 
 ***
 #### Title
