@@ -46,3 +46,8 @@ export const removeNotebook = notebook => ({
   type: DELETE_NOTEBOOK,
   notebook
 })
+
+export const setCurrentNotebook = notebook => ({
+  type: CURRENT_NOTEBOOK,
+  notebook
+})

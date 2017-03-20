@@ -47,7 +47,12 @@ export const makeNote = newNote => ({
   newNote
 })
 
-export const removeNote = (deletedNote) => ({
+export const removeNote = deletedNote => ({
     type: DELETE_NOTE,
     deletedNote
 });
+
+export const setCurrentNote = note => ({
+  type: CURRENT_NOTE,
+  note
+})

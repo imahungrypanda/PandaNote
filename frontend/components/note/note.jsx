@@ -1,7 +1,8 @@
 import React from 'react';
-import Moment from 'react-moment'
+
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
+import NoteIndexItemContainer from './note_index_item/note_index_item_container';
 
 const style = {
   overlay: {
@@ -14,53 +15,22 @@ class Note extends React.Component {
   constructor(props) {
     super(props);
 
-    this.deleteNote = this.deleteNote.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchNotes();
   }
 
-  deleteNote(note) {
-    return (() => {
-      this.props.deleteNote(note);
-      this.forceUpdate();
-    }
-    )
-  }
-
-
-
   render () {
-    let notes = "";
-
-    if (this.props.notes) {
-      notes = this.props.notes
-
-      notes = Object.keys(notes).map(id => {
-        return (
-          <li key={id}>
-            <div>
-              <section>
-                <header>{notes[id].title}<img className="delete-note" src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694282/note_ejjuma.png" onClick={this.deleteNote(notes[id])}/></header>
-                <Moment format="MM/DD/YYYY">{notes[id].created_at}</Moment>
-                <p>{notes[id].body}</p>
-              </section>
-            </div>
-          </li>
-        )
-      });
-    }
+    console.log(this.props);
 
     return (
-
-
         <section className="index">
           <header className="notes-index-header">Notes</header>
           <section className="notes-index-container">
             <ul className="notes-index">
 
-              {notes}
+              {this.props.notes.map((note, idx) => <NoteIndexItemContainer key={idx} note={note} />)}
 
             </ul>
           </section>
@@ -71,3 +41,6 @@ class Note extends React.Component {
 }
 
 export default Note;
+
+
+  // {this.props.notes.map(note => <NoteIndexItemContainer note={note} />)}

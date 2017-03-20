@@ -21,6 +21,9 @@
 
 
 .notes-index {
+  li.selected {
+    border-color: $dark-green;
+  }
   li {
 
     height: 113px;
@@ -63,6 +66,7 @@
     }
 
   }
+
   li:hover {
     background-color: $dark-green;
     border-color: $green;

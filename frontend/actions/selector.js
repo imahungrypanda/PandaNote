@@ -1,3 +1,1 @@
-export const allNotes = notes => Object.keys(notes).map(id => {
-  return notes[id];
-});
+export const notesToArray = notes => Object.keys(notes).map(id => notes[id]);
