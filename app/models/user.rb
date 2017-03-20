@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :notes
+  has_many :notebooks
 
   attr_reader :password
 
