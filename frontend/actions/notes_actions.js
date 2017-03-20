@@ -14,22 +14,22 @@ export const fetchNotes = () => dispatch => (
 
 export const fetchNote = note => dispatch => (
   APIUTIL.fetchNote(note.id)
-    .then(nt => dispatch(recieveNote(nt)))
+    .then(newNote => dispatch(recieveNote(newNote)))
 );
 
 export const createNote = note => dispatch => (
   APIUTIL.createNote(note)
-    .then(nt => dispatch(makeNote(nt)))
+    .then(newNote => dispatch(makeNote(newNote)))
 )
 
 export const updateNote = note => dispatch => (
   APIUTIL.updateNote(note)
-    .then(nt => dispatch(recieveNote(nt)))
+    .then(newNote => dispatch(recieveNote(newNote)))
 );
 
 export const deleteNote = note => dispatch => (
   APIUTIL.deleteNote(note.id)
-    .then(nt => dispatch(removeNote(nt)))
+    .then(newNote => dispatch(removeNote(newNote)))
 );
 
 export const recieveNotes = notes => ({
