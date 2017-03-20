@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string           not null
-#  body        :text             not null
+#  body        :text
 #  user_id     :integer          not null
 #  notebook_id :integer          not null
 #  archived    :boolean          default("false")

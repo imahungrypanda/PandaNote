@@ -69,8 +69,7 @@ class Sidebar extends React.Component {
     const blankNote = {
       title: "Untitled",
       body: " ",
-      notebook_id: 0,
-      user_id: this.props.currentUser.id
+      notebook_id: 0
     }
     this.props.createNote(blankNote);
   }
