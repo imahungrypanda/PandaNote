@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
-import { RECIEVE_NOTE,
-         RECIEVE_ALL_NOTES,
+import { RECEIVE_NOTE,
+         RECEIVE_ALL_NOTES,
          MAKE_NOTE,
          DELETE_NOTE,
          CURRENT_NOTE } from '../actions/notes_actions';
@@ -16,11 +16,11 @@ const NotesReducer = (state = _nullState, action) => {
   let newState = merge({}, state);
 
   switch (action.type) {
-    case RECIEVE_ALL_NOTES:
+    case RECEIVE_ALL_NOTES:
       newState.allNotes = action.notes;
       return newState;
 
-    case RECIEVE_NOTE:
+    case RECEIVE_NOTE:
       newState.currentNote = action.note;
       return newState;
 

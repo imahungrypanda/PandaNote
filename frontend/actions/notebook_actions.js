@@ -1,7 +1,7 @@
 import * as APIUTIL from '../util/notebook_api_util';
 
-export const RECIEVE_NOTEBOOKS = "RECIEVE_NOTEBOOKS";
-export const RECIEVE_NOTEBOOK  = "RECIEVE_NOTEBOOK";
+export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
+export const RECEIVE_NOTEBOOK  = "RECEIVE_NOTEBOOK";
 export const MAKE_NOTEBOOK     = "MAKE_NOTEBOOK";
 export const DELETE_NOTEBOOK   = "DELETE_NOTEBOOK";
 export const CURRENT_NOTEBOOK  = "CURRENT_NOTEBOOK";
@@ -9,12 +9,12 @@ export const CURRENT_NOTEBOOK  = "CURRENT_NOTEBOOK";
 
 export const fetchNotebooks = () => dispatch => (
   APIUTIL.fetchNotebooks()
-    .then(notebooks => dispatch(recieveNotebooks(notebooks)))
+    .then(notebooks => dispatch(receiveNotebooks(notebooks)))
 );
 
 export const fetchNotebook = id => dispatch => (
   APIUTIL.fetchNotebook(id)
-    .then(notebook => dispatch(recieveNotebook(notebook)))
+    .then(notebook => dispatch(receiveNotebook(notebook)))
 );
 
 export const createNotebook = notebook => dispatch => (
@@ -27,13 +27,13 @@ export const deleteNotebook = notebook => dispatch => (
     .then(newNotebook => dispatch(removeNotebook(newNotebook)))
 )
 
-export const recieveNotebooks = notebooks => ({
-  type: RECIEVE_NOTEBOOKS,
+export const receiveNotebooks = notebooks => ({
+  type: RECEIVE_NOTEBOOKS,
   notebooks
 });
 
-export const recieveNotebook = notebook => ({
-  type: RECIEVE_NOTEBOOK,
+export const receiveNotebook = notebook => ({
+  type: RECEIVE_NOTEBOOK,
   notebook
 });
 

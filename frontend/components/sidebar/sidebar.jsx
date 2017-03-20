@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
+// import Drawer from 'react-motion-drawer';
 import { Link, withRouter, hashHistory } from 'react-router';
+import NotebooksIndex from '../notebooks/notebooks_container';
 
 const style = {
   overlay: {
@@ -22,11 +24,7 @@ class Sidebar extends React.Component {
       newNotebookName: ""
      };
 
-    this.closeUserModal = this.closeUserModal.bind(this);
-    this.closeNotebookModal = this.closeNotebookModal.bind(this);
-    this.closeNewNotebookModal = this.closeNewNotebookModal.bind(this);
-    this.closeTagsModal = this.closeTagsModal.bind(this);
-    this.closeNewTagModal = this.closeNewTagModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.noteLogout = this.noteLogout.bind(this);
     this.notesHome = this.notesHome.bind(this);
     this.createNote = this.createNote.bind(this);
@@ -36,24 +34,13 @@ class Sidebar extends React.Component {
     Modal.setAppElement('body');
   }
 
-  closeUserModal() {
-    this.setState({userModal: false});
-  }
-
-  closeNotebookModal() {
-    this.setState({notebookModal: false});
-  }
-
-  closeNewNotebookModal() {
-    this.setState({noteNewbookModal: false});
-  }
-
-  closeTagsModal() {
-    this.setState({tagsModal: false});
-  }
-
-  closeNewTagModal() {
-    this.setState({tagModal: false});
+  closeModal() {
+    this.setState({userModal: false,
+    notebookModal: false,
+    newNotebookModal: false,
+    tagsModal: false,
+    newTagModal: false
+  });
   }
 
   noteLogout() {
@@ -74,11 +61,11 @@ class Sidebar extends React.Component {
     this.props.createNote(blankNote);
   }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  // update(field) {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   });
+  // }
 
   render() {
 
@@ -103,29 +90,9 @@ class Sidebar extends React.Component {
 
 
 
-          <img className="notebook-icon"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
-            alt="notebooks"
-            onClick={() => this.setState({notebookModal: true})}></img>
 
-          <Modal
-            isOpen={this.state.newNotebookModal}
-            contentLabel="Modal"
-            className="new-notebook-modal"
+          <NotebooksIndex />
 
-            onRequestClose={this.closeNewNotebookModal}>
-
-            <form className="new-notebook-form">
-              <p>CREATE NOTEBOOK</p>
-              <input type="text"
-                className="new-notebook-name"
-                value={this.state.newNotebookName}
-                onChange={this.update("newNotebookName")}
-                placeholder="Notebook Title" />
-              <input className="button" type="button" value="Cancel" onClick={this.closeNotebookModal}/>
-              <input className="button" type="button" value="Create Notebook" onClick={""}/>
-            </form>
-          </Modal>
 
 
 
@@ -138,7 +105,7 @@ class Sidebar extends React.Component {
             contentLabel="Modal"
             className="tags-modal"
 
-            onRequestClose={this.closeTagsModal}>
+            onRequestClose={this.closeModal}>
             <input className="button" type="button" value="Logout" onClick={this.noteLogout} />
           </Modal>
 
@@ -157,7 +124,7 @@ class Sidebar extends React.Component {
             contentLabel="Modal"
             className="user-profile-modal"
             style={style}
-            onRequestClose={this.closeUserModal}>
+            onRequestClose={this.closeModal}>
             <input className="button" type="button" value="Logout" onClick={this.noteLogout} />
           </Modal>
         </section>
@@ -169,3 +136,37 @@ class Sidebar extends React.Component {
 
 
 export default Sidebar;
+
+
+
+
+
+//
+// <Modal
+//             isOpen={this.state.notebookModal}
+//             contentLabel="Modal"
+//             className="notebook-modal"
+//
+//             onRequestClose={this.closeModal}>
+//
+//
+//             <header className="notes-index-header">Notebooks</header>
+//
+//           <Modal
+//             isOpen={this.state.newNotebookModal}
+//             contentLabel="Modal"
+//             className="new-notebook-modal"
+//             onRequestClose={this.closeModal} >
+//
+//             <form className="new-notebook-form">
+//               <p>CREATE NOTEBOOK</p>
+//               <input type="text"
+//                 className="new-notebook-name"
+//                 value={this.state.newNotebookName}
+//                 onChange={this.update("newNotebookName")}
+//                 placeholder="Notebook Title" />
+//               <input className="button" type="button" value="Cancel" onClick={this.closeModal}/>
+//               <input className="button" type="button" value="Create Notebook" onClick={""}/>
+//             </form>
+//           </Modal>
+// </Modal>
