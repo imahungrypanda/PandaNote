@@ -4,7 +4,6 @@ import { RECEIVE_NOTE,
          MAKE_NOTE,
          DELETE_NOTE,
          CURRENT_NOTE } from '../actions/notes_actions';
-import { notesToArray } from '../actions/selector';
 
 let _nullState = {
   currentNote: null,
@@ -26,6 +25,7 @@ const NotesReducer = (state = _nullState, action) => {
 
     case MAKE_NOTE:
       newState.allNotes[action.newNote.id] = action.newNote;
+      newState.currentNote = action.newNote;
       return newState;
 
     case DELETE_NOTE:
