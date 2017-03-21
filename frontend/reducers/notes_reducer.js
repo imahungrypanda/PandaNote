@@ -13,10 +13,13 @@ let _nullState = {
 const NotesReducer = (state = _nullState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
+  let keys = null;
 
   switch (action.type) {
     case RECEIVE_ALL_NOTES:
       newState.allNotes = action.notes;
+      keys = Object.keys(newState.allNotes);
+      newState.currentNote = newState.allNotes[keys[0]];
       return newState;
 
     case RECEIVE_NOTE:
@@ -30,7 +33,7 @@ const NotesReducer = (state = _nullState, action) => {
 
     case DELETE_NOTE:
       delete newState.allNotes[action.deletedNote.id];
-      const keys = Object.keys(newState.allNotes);
+      keys = Object.keys(newState.allNotes);
       newState.currentNote = newState.allNotes[keys[0]];
       return newState;
 

@@ -13,11 +13,14 @@ const _nullState = {
 
 const NotebookReducer = (state = _nullState, action) => {
   let newState = merge({}, state);
+  let keys = null;
   Object.freeze(state);
 
   switch (action.type) {
     case RECEIVE_NOTEBOOKS:
       newState.allNotebooks = action.notebooks;
+      keys = Object.keys(newState.allNotebooks);
+      newState.currentNotebook = newState.allNotebooks[keys[0]];
       return newState;
 
     case RECEIVE_NOTEBOOK:
@@ -26,7 +29,7 @@ const NotebookReducer = (state = _nullState, action) => {
 
     case DELETE_NOTEBOOK:
       delete newState.allNotebooks[action.notebook.id];
-      const keys = Object.keys(newState.allNotebooks);
+      keys = Object.keys(newState.allNotebooks);
       newState.currentNotebook = newState.allNotebooks[keys[0]];
       return newState;
 
@@ -41,7 +44,6 @@ const NotebookReducer = (state = _nullState, action) => {
 
     default:
       return state;
-
   }
 };
 

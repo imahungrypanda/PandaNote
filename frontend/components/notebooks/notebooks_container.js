@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import NotebooksIndex from './notebooks_index';
-import { fetchNotebooks,
-         createNotebook,
+import { createNotebook,
          deleteNotebook,
          setCurrentNotebook
        } from '../../actions/notebook_actions';
@@ -15,7 +14,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchNotebooks: () => dispatch(fetchNotebooks()),
   createNotebook: notebook => dispatch(createNotebook(notebook)),
   deleteNotebook: notebook => dispatch(deleteNotebook(notebook)),
   setCurrentNotebook: notebook => dispatch(setCurrentNotebook(notebook))

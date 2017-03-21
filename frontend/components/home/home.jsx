@@ -5,6 +5,15 @@ import NoteIndex from '../note/note_index_container';
 import NoteEditor from '../editor/note_editor_container';
 
 class Home extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentWillMount() {
+    this.props.fetchNotes();
+    this.props.fetchNotebooks();
+  }
+
   render(){
     return (
       <div className="note-container">
