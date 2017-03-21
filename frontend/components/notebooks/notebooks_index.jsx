@@ -44,8 +44,10 @@ class NotebookIndex extends React.Component {
           className="notebook-modal"
           onRequestClose={this.closeModal}>
 
-          <header className="notes-index-header">Notebooks</header>
-          <input type="button" onClick={() => this.setState({newNotebookModal: true})} />
+          <div className="notes-index-header-container">
+            <header className="notes-index-header">Notebooks</header>
+            <input type="button" className="button create-notebook-button" value="Create Notebook" onClick={() => this.setState({newNotebookModal: true})} />
+          </div>
 
           <ul className="notebook-index">
             {this.props.allNotebooks.map((notebook, idx) => (

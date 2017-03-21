@@ -33,8 +33,8 @@ class NotebookForm extends React.Component {
             onChange={this.update("newNotebookName")}
             placeholder="Notebook Title" />
 
-          <input className="button" type="button" value="Cancel" onClick={this.props.close}/>
           <input className="button" type="submit" value="Create Notebook" onClick={this.createNotebook}/>
+          <input className="button" type="button" value="Cancel" onClick={this.props.close}/>
         </form>
     )
   }

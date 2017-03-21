@@ -2,8 +2,52 @@
   position: fixed;
   left: 104px;
   height: 100%;
-  border: 4px solid red;
+  border: 1px solid grey;
   box-sizing: border-box;
   width: 400px;
   background-color: white;
+}
+
+.notes-index-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notes-index-header {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 13px 25px 13px 25px;
+}
+
+.create-notebook-button {
+  float: right;
+ margin-right: 10px;
+}
+
+.new-notebook-modal{
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.new-notebook-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+  }
+
+  input{
+    width: 300px;
+  }
+
+  .new-notebook-name {
+    font-size: 15px;
+    text-align: center;
+  }
 }
