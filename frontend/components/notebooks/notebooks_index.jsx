@@ -5,7 +5,6 @@ import NotebookForm from './notebooks_form';
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
 
     this.state = {
       notebookModal: false,
@@ -26,7 +25,6 @@ class NotebookIndex extends React.Component {
   setNotebook(notebook) {
     return (e) => {
       e.preventDefault();
-      console.log(notebook);
       this.props.setCurrentNotebook(notebook);
       this.closeModal();
     }
