@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-// import Drawer from 'react-motion-drawer';
 import { Link, withRouter, hashHistory } from 'react-router';
 import NotebooksIndex from '../notebooks/notebooks_container';
 
@@ -54,13 +53,10 @@ class Sidebar extends React.Component {
   }
 
   createNote() {
-    // TODO: Then filter notes if there is a notebook selected.
     let notebookId = this.props.currentNotebook;
     if (!notebookId) {
       notebookId = this.props.selectFirstNotebook(this.props.allNotebooks);
     }
-    // console.log(notebookId);
-
 
     const blankNote = {
       title: "Untitled",
@@ -69,12 +65,6 @@ class Sidebar extends React.Component {
     }
     this.props.createNote(blankNote);
   }
-
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
 
   render() {
 
@@ -145,37 +135,3 @@ class Sidebar extends React.Component {
 
 
 export default Sidebar;
-
-
-
-
-
-//
-// <Modal
-//             isOpen={this.state.notebookModal}
-//             contentLabel="Modal"
-//             className="notebook-modal"
-//
-//             onRequestClose={this.closeModal}>
-//
-//
-//             <header className="notes-index-header">Notebooks</header>
-//
-//           <Modal
-//             isOpen={this.state.newNotebookModal}
-//             contentLabel="Modal"
-//             className="new-notebook-modal"
-//             onRequestClose={this.closeModal} >
-//
-//             <form className="new-notebook-form">
-//               <p>CREATE NOTEBOOK</p>
-//               <input type="text"
-//                 className="new-notebook-name"
-//                 value={this.state.newNotebookName}
-//                 onChange={this.update("newNotebookName")}
-//                 placeholder="Notebook Title" />
-//               <input className="button" type="button" value="Cancel" onClick={this.closeModal}/>
-//               <input className="button" type="button" value="Create Notebook" onClick={""}/>
-//             </form>
-//           </Modal>
-// </Modal>

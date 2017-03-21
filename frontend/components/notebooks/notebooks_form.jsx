@@ -4,17 +4,23 @@ import Modal from 'react-modal';
 class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
 
     this.state = {
       newNotebookName: ""
     }
+
+    this.createNotebook = this.createNotebook.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  createNotebook() {
+    this.props.createNotebook({title: this.state.newNotebookName})
+      .then(() => this.props.close());
   }
 
   render() {
@@ -28,12 +34,10 @@ class NotebookForm extends React.Component {
             placeholder="Notebook Title" />
 
           <input className="button" type="button" value="Cancel" onClick={this.props.close}/>
-          <input className="button" type="submit" value="Create Notebook" onClick={""}/>
+          <input className="button" type="submit" value="Create Notebook" onClick={this.createNotebook}/>
         </form>
     )
   }
 }
 
 export default NotebookForm;
-
-// TODO: Add functionality to submit for form

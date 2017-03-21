@@ -5,6 +5,7 @@ import NotebookForm from './notebooks_form';
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
 
     this.state = {
       notebookModal: false,
@@ -14,18 +15,6 @@ class NotebookIndex extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.setNotebook = this.setNotebook.bind(this);
   }
-
-  // componentWillMount() {
-  //   this.props.fetchNotebooks();
-  //
-  // }
-
-  // componentDidMount() {
-  //   console.log(this.props.currentNotebook);
-  //   if (!this.props.currentNotebook) {
-  //     this.props.setCurrentNotebook(this.props.allNotebooks[0]);
-  //   }
-  // }
 
   closeModal() {
     this.setState({
@@ -75,17 +64,14 @@ class NotebookIndex extends React.Component {
             contentLabel="Modal"
             className="new-notebook-modal"
             onRequestClose={this.closeModal} >
-            <NotebookForm close={this.closeModal}/>
+            <NotebookForm close={this.closeModal}
+              createNotebook={this.props.createNotebook} />
           </Modal>
 
         </Modal>
       </section>
     )
   }
-
-  // render() {
-  //   return (<div></div>)
-  // }
 }
 
 export default NotebookIndex;
