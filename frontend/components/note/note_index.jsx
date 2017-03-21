@@ -15,12 +15,21 @@ class NoteIndex extends React.Component {
   }
 
   render () {
+    let notes = this.props.notes;
+    let noteHeader = "Notes";
+
+    if (this.props.currentNotebook) {
+      noteHeader = this.props.currentNotebook.title;
+      notes = notes.filter(note => note.notebook_id === this.props.currentNotebook.id);
+    }
+
+
     return (
         <section className="index">
-          <header className="notes-index-header">Notes</header>
+          <header className="notes-index-header">{noteHeader}</header>
           <section className="notes-index-container">
             <ul className="notes-index">
-              {this.props.notes.map((note, idx) => <NoteIndexItemContainer key={idx} note={note} />)}
+              {notes.map((note, idx) => <NoteIndexItemContainer key={idx} note={note} />)}
             </ul>
           </section>
 

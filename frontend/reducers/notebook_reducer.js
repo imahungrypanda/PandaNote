@@ -19,8 +19,6 @@ const NotebookReducer = (state = _nullState, action) => {
   switch (action.type) {
     case RECEIVE_NOTEBOOKS:
       newState.allNotebooks = action.notebooks;
-      keys = Object.keys(newState.allNotebooks);
-      newState.currentNotebook = newState.allNotebooks[keys[0]];
       return newState;
 
     case RECEIVE_NOTEBOOK:

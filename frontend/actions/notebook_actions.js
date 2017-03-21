@@ -29,8 +29,7 @@ export const deleteNotebook = notebook => dispatch => (
 
 export const receiveNotebooks = notebooks => ({
   type: RECEIVE_NOTEBOOKS,
-  notebooks,
-  junk: console.log(notebooks)
+  notebooks
 });
 
 export const receiveNotebook = notebook => ({

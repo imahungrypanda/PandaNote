@@ -49,14 +49,23 @@ class Sidebar extends React.Component {
   }
 
   notesHome() {
+    this.props.setCurrentNotebook(null);
     hashHistory.replace('/home');
   }
 
   createNote() {
+    // TODO: Then filter notes if there is a notebook selected.
+    let notebookId = this.props.currentNotebook;
+    if (!notebookId) {
+      notebookId = this.props.selectFirstNotebook(this.props.allNotebooks);
+    }
+    // console.log(notebookId);
+
+
     const blankNote = {
       title: "Untitled",
       body: " ",
-      notebook_id: 0
+      notebook_id: notebookId.id
     }
     this.props.createNote(blankNote);
   }
