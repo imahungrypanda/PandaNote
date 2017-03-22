@@ -18,11 +18,34 @@
   border-bottom: 1px solid grey;
 }
 
-.quill-note-editor {
+.editor {
   min-height: 50%;
   height: 100%;
+  z-index: 0;
 }
 
 .save-button {
   width: 15px;
+}
+
+
+
+span.Dropdown_root__3ALmx {
+  z-index: 0;
+}
+
+div.ButtonWrap__root___1EO_R {
+  z-index: 0;
+}
+
+select.Dropdown__root___3ALmx {
+  z-index: 0;
+}
+
+span.Dropdown__root___3ALmx {
+  z-index: 0;
+}
+
+div.DraftEditor-editorContainer {
+  z-index: 0;
 }

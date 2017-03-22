@@ -1,11 +1,12 @@
 .notebook-modal {
-  position: fixed;
+  position: relative;
   left: 104px;
   height: 100%;
   border: 1px solid grey;
   box-sizing: border-box;
   width: 400px;
   background-color: white;
+  z-index: 10001;
 }
 
 .notes-index-header-container {

@@ -59,6 +59,12 @@ This document will hold all the bugs and solutions that I encounter during the d
 - [ ] http://stackoverflow.com/questions/35622588/how-to-reset-the-state-of-a-redux-store
 
 ***
+#### Rich Text Editing
+**Issue:** Rich Text Editing was by far the hardest part of this whole program up to this point. I was originally going to use Draft.js but after reading the documentation and seeing how complex it was I decided to switch to quill. For some reason though no matter what I tried quill would not work. 
+
+**Correction:** After almost a whole day or trial and error on both RTE's I tried out react-rte which worked after only about 30 minutes of work.
+
+***
 #### Title
 **Issue:**
 

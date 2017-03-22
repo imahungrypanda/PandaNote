@@ -18,7 +18,6 @@ class NoteEditor extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.currentNote) {
-      // console.log(RichTextEditor.createValueFromString(newProps.currentNote.body, 'html'));
       const value = RichTextEditor.createValueFromString(newProps.currentNote.body, 'html');
       if (this.state.id !== 0
             && newProps.currentNote.id !== this.state.id
@@ -42,8 +41,6 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <section className="notes-editor">
         <header className="notes-editor-header">
