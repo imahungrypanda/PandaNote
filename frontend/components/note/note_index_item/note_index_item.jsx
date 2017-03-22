@@ -14,7 +14,6 @@ class NoteIndexItem extends React.Component {
   removeNote(note) {
     return ((e) => {
       e.preventDefault();
-      console.log(note);
       this.props.setCurrentNote(null);
       this.props.deleteNote(note);
     })
@@ -22,6 +21,7 @@ class NoteIndexItem extends React.Component {
 
   setCurrentNote(note) {
     return (e) => {
+      e.preventDefault();
       this.props.currentNote.className = "";
       this.props.setCurrentNote(note);
       e.currentTarget.className = "selected";

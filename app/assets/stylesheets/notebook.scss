@@ -24,11 +24,13 @@
 .notebook-index-item {
   box-sizing: border-box;
   border: 3px solid transparent;
+  padding: 0px 25px 0px 25px;
   img {
     float: right;
     width: 20px;
     height: 20px;
     border: 3px solid transparent;
+    border-radius: 10px;
   }
   img:hover {
     background-color: $tan;

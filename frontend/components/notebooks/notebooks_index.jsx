@@ -32,7 +32,12 @@ class NotebookIndex extends React.Component {
   }
 
   removeNotebook(notebook) {
-    return (e) => {}
+    return (e) => {
+      e.preventDefault();
+      console.log(notebook);
+      this.props.setCurrentNotebook(null);
+      this.props.deleteNotebook(notebook);
+    }
   }
 
   render() {
@@ -57,12 +62,14 @@ class NotebookIndex extends React.Component {
           <ul className="notebook-index">
             {this.props.allNotebooks.map((notebook, idx) => (
               <li key={idx} className="notebook-index-item" onClick={this.setNotebook(notebook)}>
-                <h4 className="notebook-title">{notebook.title}
-                  <img
-                  className="delete-notebook"
-                  src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
-                  onClick={this.removeNotebook(notebook)}/>
-                  </h4>
+                <div>
+                  <h4 className="notebook-title">{notebook.title}
+                    <img
+                    className="delete-notebook"
+                    src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                    onClick={this.removeNotebook(notebook)}/>
+                    </h4>
+                  </div>
               </li>
             ))}
           </ul>

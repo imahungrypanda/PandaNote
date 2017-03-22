@@ -27,8 +27,7 @@ const NotebookReducer = (state = _nullState, action) => {
 
     case DELETE_NOTEBOOK:
       delete newState.allNotebooks[action.notebook.id];
-      keys = Object.keys(newState.allNotebooks);
-      newState.currentNotebook = newState.allNotebooks[keys[0]];
+      newState.currentNotebook = null;
       return newState;
 
     case MAKE_NOTEBOOK:

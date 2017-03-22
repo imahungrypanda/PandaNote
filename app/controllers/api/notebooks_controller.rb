@@ -24,6 +24,7 @@ class Api::NotebooksController < ApplicationController
     @notebook = Notebook.find(params[:id])
 
     if @notebook
+      # @notebook.notes.delete
       @notebook.delete
       render :show
     else
