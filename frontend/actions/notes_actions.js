@@ -20,11 +20,11 @@ export const fetchNote = note => dispatch => (
 export const createNote = note => dispatch => (
   APIUTIL.createNote(note)
     .then(newNote => dispatch(makeNote(newNote)))
-)
+);
 
 export const updateNote = note => dispatch => (
   APIUTIL.updateNote(note)
-    .then(newNote => dispatch(receiveNote(newNote)))
+    .then(newNote => dispatch(patchNote(newNote)))
 );
 
 export const deleteNote = note => dispatch => (
@@ -42,10 +42,15 @@ export const receiveNote = note => ({
   note
 });
 
+export const patchNote = note => ({
+  type: UPDATE_NOTE,
+  note
+});
+
 export const makeNote = newNote => ({
   type: MAKE_NOTE,
   newNote
-})
+});
 
 export const removeNote = deletedNote => ({
     type: DELETE_NOTE,
@@ -55,4 +60,4 @@ export const removeNote = deletedNote => ({
 export const setCurrentNote = note => ({
   type: CURRENT_NOTE,
   note
-})
+});

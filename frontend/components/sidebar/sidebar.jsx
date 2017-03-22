@@ -66,8 +66,8 @@ class Sidebar extends React.Component {
     this.props.createNote(blankNote);
   }
 
+// TODO: Break out each action into its own functional component.
   render() {
-
     return (
       <aside className="sidebar">
         <section className="sidebar-logo">

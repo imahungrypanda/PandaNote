@@ -1,6 +1,28 @@
 .notes-editor {
   width: 75%;
   min-width: 350px;
+}
 
+.note-title {
+  font-size: 36px;
+  border: 0px solid transparent;
+  margin: 13px 25px 13px 25px;
+}
 
+.quill {
+
+}
+
+.quill-toolbar {
+
+  border-bottom: 1px solid grey;
+}
+
+.quill-note-editor {
+  min-height: 50%;
+  height: 100%;
+}
+
+.save-button {
+  width: 15px;
 }

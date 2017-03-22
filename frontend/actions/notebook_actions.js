@@ -39,12 +39,14 @@ export const receiveNotebook = notebook => ({
 
 export const makeNotebook = notebook => ({
   type: MAKE_NOTEBOOK,
-  notebook
+  notebook,
+  junk: console.log(notebook)
 });
 
 export const removeNotebook = notebook => ({
   type: DELETE_NOTEBOOK,
-  notebook
+  notebook,
+  junk: console.log(notebook)
 })
 
 export const setCurrentNotebook = notebook => ({

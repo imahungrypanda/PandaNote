@@ -6,13 +6,15 @@ class NoteIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.deleteNote = this.deleteNote.bind(this);
+    this.removeNote = this.removeNote.bind(this);
     this.setCurrentNote = this.setCurrentNote.bind(this);
     this.selected = this.selected.bind(this);
   }
 
-  deleteNote(note) {
-    return (() => {
+  removeNote(note) {
+    return ((e) => {
+      e.preventDefault();
+      console.log(note);
       this.props.setCurrentNote(null);
       this.props.deleteNote(note);
     })
@@ -38,17 +40,17 @@ class NoteIndexItem extends React.Component {
     let selected = "";
 
     return (
-      <li  className={this.selected()} onClick={this.setCurrentNote(note)}>
+      <li  className={this.selected()} >
         <div>
-          <section>
+          <section onClick={this.setCurrentNote(note)} >
             <header>{note.title}
               <img
                 className="delete-note"
-                src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694282/note_ejjuma.png"
-                onClick={this.deleteNote(note)}/>
+                src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                onClick={this.removeNote(note)}/>
             </header>
             <Moment format="MM/DD/YYYY">{note.created_at}</Moment>
-            <p>{note.body}</p>
+            <p>{note.body.replace(/<(?:.|\n)*?>/gm, '')}</p>
           </section>
         </div>
       </li>

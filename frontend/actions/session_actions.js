@@ -1,4 +1,5 @@
 import * as APIUTIL from '../util/session_api_util';
+import { createNotebook } from './notebook_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -20,6 +21,7 @@ export const signup = user => dispatch => (
   APIUTIL.signup(user)
     .then(usr => dispatch(receiveCurrentUser(usr)),
           err => dispatch(receiveErrors(err.responseJSON)))
+    .then(usr => dispatch(createNotebook(usr.username)))
 );
 
 export const receiveCurrentUser = currentUser => ({
