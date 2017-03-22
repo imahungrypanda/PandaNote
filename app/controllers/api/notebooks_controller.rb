@@ -21,11 +21,11 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = Notebook.find(params[:id])
+    @notebook = current_user.notebooks.find(params[:id])
 
     if @notebook
-      # @notebook.notes.delete
-      @notebook.delete
+      @notebook.destroy
+      @notebook.notes.destroy_all
       render :show
     else
       render( json: ["Nothing to delete"], status: 404)
