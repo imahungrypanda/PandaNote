@@ -17,12 +17,10 @@ export const fetchNotebook = id => dispatch => (
     .then(notebook => dispatch(receiveNotebook(notebook)))
 );
 
-export const createNotebook = notebook => dispatch => {
-  console.log(notebook);
-  return (
+export const createNotebook = notebook => dispatch => (
   APIUTIL.createNotebook(notebook)
     .then(newNotebook => dispatch(makeNotebook(newNotebook)))
-)};
+);
 
 export const deleteNotebook = notebook => dispatch => (
   APIUTIL.deleteNotebook(notebook.id)
@@ -41,14 +39,12 @@ export const receiveNotebook = notebook => ({
 
 export const makeNotebook = notebook => ({
   type: MAKE_NOTEBOOK,
-  notebook,
-  junk: console.log(notebook)
+  notebook
 });
 
 export const removeNotebook = notebook => ({
   type: DELETE_NOTEBOOK,
-  notebook,
-  junk: console.log(notebook)
+  notebook
 })
 
 export const setCurrentNotebook = notebook => ({

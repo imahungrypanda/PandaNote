@@ -34,7 +34,6 @@ class NotebookIndex extends React.Component {
   removeNotebook(notebook) {
     return (e) => {
       e.preventDefault();
-      console.log(notebook);
       this.props.setCurrentNotebook(null);
       this.props.deleteNotebook(notebook);
     }
