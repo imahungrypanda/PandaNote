@@ -6,7 +6,7 @@
   box-sizing: border-box;
   width: 400px;
   background-color: white;
-  z-index: 10001;
+  overflow-y: scroll;
 }
 
 .notes-index-header-container {
@@ -19,6 +19,10 @@
   font-size: 24px;
   font-weight: lighter;
   padding: 13px 25px 13px 25px;
+}
+
+.notebook-index {
+  overflow-y: scroll;
 }
 
 .create-notebook-button {
