@@ -23,4 +23,4 @@ export const deleteNotebook = id => (
     method: "DELETE",
     url: `/api/notebooks/${id}`
   })
-)
+);
