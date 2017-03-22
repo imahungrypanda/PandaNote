@@ -9,25 +9,44 @@
   overflow-y: scroll;
 }
 
-.notes-index-header-container {
+.notebooks-index-header-container {
   display: flex;
   justify-content: space-between;
 }
 
-.notes-index-header {
+.notebooks-index-header {
   font-family: 'Raleway', sans-serif;
   font-size: 24px;
   font-weight: lighter;
   padding: 13px 25px 13px 25px;
 }
 
-.notebook-index {
-  overflow-y: scroll;
+.notebook-index-item {
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  img {
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+  }
+  img:hover {
+    background-color: $tan;
+    border-color: $light-green;
+  }
+}
+
+li.notebook-index-item:hover {
+  background-color: $dark-green;
+  border-color: $green;
 }
 
 .create-notebook-button {
+  position: relative;
+  bottom: 2px;
+  margin-bottom: 10px;
   float: right;
- margin-right: 10px;
+  margin-right: 10px;
 }
 
 .new-notebook-modal{

@@ -13,6 +13,7 @@ class NotebookIndex extends React.Component {
 
     this.closeModal = this.closeModal.bind(this);
     this.setNotebook = this.setNotebook.bind(this);
+    this.removeNotebook = this.removeNotebook.bind(this);
   }
 
   closeModal() {
@@ -30,6 +31,10 @@ class NotebookIndex extends React.Component {
     }
   }
 
+  removeNotebook(notebook) {
+    return (e) => {}
+  }
+
   render() {
     return (
       <section>
@@ -44,15 +49,20 @@ class NotebookIndex extends React.Component {
           className="notebook-modal"
           onRequestClose={this.closeModal}>
 
-          <div className="notes-index-header-container">
-            <header className="notes-index-header">Notebooks</header>
+          <div className="notebooks-index-header-container">
+            <header className="notebooks-index-header">Notebooks</header>
             <input type="button" className="button create-notebook-button" value="Create Notebook" onClick={() => this.setState({newNotebookModal: true})} />
           </div>
 
           <ul className="notebook-index">
             {this.props.allNotebooks.map((notebook, idx) => (
               <li key={idx} className="notebook-index-item" onClick={this.setNotebook(notebook)}>
-                <h4 className="notebook-title">{notebook.title}</h4>
+                <h4 className="notebook-title">{notebook.title}
+                  <img
+                  className="delete-notebook"
+                  src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                  onClick={this.removeNotebook(notebook)}/>
+                  </h4>
               </li>
             ))}
           </ul>
