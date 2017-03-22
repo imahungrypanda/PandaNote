@@ -18,7 +18,7 @@
 
 .notes-index-container {
   overflow-y: scroll;
-  height: 84vh;
+  height: 84%;
 }
 
 
@@ -27,6 +27,7 @@
     border-color: $dark-green;
   }
   li {
+    padding: 13px 25px 13px 25px;
 
     height: 113px;
 
