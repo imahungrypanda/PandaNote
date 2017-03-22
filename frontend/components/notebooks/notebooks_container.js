@@ -7,9 +7,16 @@ import { createNotebook,
 
 const mapStateToProps = (state) => {
   let notebooks = Object.keys(state.notebook.allNotebooks).map(id => state.notebook.allNotebooks[id]);
+  let length = 0;
+  if (notebooks) {
+    length = notebooks.length;
+  }
+
+
   return ({
     allNotebooks: notebooks,
-    currentNotebook: state.notebook.currentNotebook
+    currentNotebook: state.notebook.currentNotebook,
+    notebookCount: length
   });
 };
 

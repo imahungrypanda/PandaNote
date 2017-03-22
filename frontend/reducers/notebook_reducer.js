@@ -1,8 +1,8 @@
 import merge from 'lodash/merge';
 import { RECEIVE_NOTEBOOKS,
          RECEIVE_NOTEBOOK,
-         MAKE_NOTEBOOK,
          DELETE_NOTEBOOK,
+         MAKE_NOTEBOOK,
          CURRENT_NOTEBOOK
        } from '../actions/notebook_actions';
 
@@ -26,6 +26,7 @@ const NotebookReducer = (state = _nullState, action) => {
       return newState;
 
     case DELETE_NOTEBOOK:
+      // debugger
       delete newState.allNotebooks[action.notebook.id];
       newState.currentNotebook = null;
       return newState;

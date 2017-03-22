@@ -1,4 +1,5 @@
 import * as APIUTIL from '../util/notebook_api_util';
+import { fetchNotes } from './notes_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK  = "RECEIVE_NOTEBOOK";
@@ -25,7 +26,8 @@ export const createNotebook = notebook => dispatch => (
 export const deleteNotebook = notebook => dispatch => (
   APIUTIL.deleteNotebook(notebook.id)
     .then(newNotebook => dispatch(removeNotebook(newNotebook)))
-)
+    .then(() => dispatch(fetchNotes()))
+);
 
 export const receiveNotebooks = notebooks => ({
   type: RECEIVE_NOTEBOOKS,
@@ -45,9 +47,9 @@ export const makeNotebook = notebook => ({
 export const removeNotebook = notebook => ({
   type: DELETE_NOTEBOOK,
   notebook
-})
+});
 
 export const setCurrentNotebook = notebook => ({
   type: CURRENT_NOTEBOOK,
   notebook
-})
+});
