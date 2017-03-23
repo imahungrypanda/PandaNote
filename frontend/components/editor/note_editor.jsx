@@ -1,5 +1,6 @@
 import React from 'react';
 import RichTextEditor from 'react-rte';
+import TagForm from '../tags/tag_form';
 
 class NoteEditor extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class NoteEditor extends React.Component {
       id: 0,
       title: "",
       body: "",
+      tags: {},
       value: RichTextEditor.createEmptyValue()
     };
 
@@ -29,8 +31,8 @@ class NoteEditor extends React.Component {
         this.props.save({ id, title, body: value.toString('html') });
       }
 
-      const { id, title, body } = newProps.currentNote;
-      this.setState({id, title, body, value});
+      const { id, title, body, tags } = newProps.currentNote;
+      this.setState({id, title, body, value, tags });
     }
   }
 
@@ -52,9 +54,9 @@ class NoteEditor extends React.Component {
 
   render() {
     if (this.props.currentNote) {
-
-      console.log(this.props.currentNote.tags);
+      // console.log(this.props.currentNote.tags);
     }
+
     return (
       <section className="notes-editor">
         <header className="notes-editor-header">
@@ -62,11 +64,12 @@ class NoteEditor extends React.Component {
             className="note-title"
             value={this.state.title}
             onChange={this.titleUpdate} />
-
-          <img className="save-button"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
-            onClick={this.save}/>
-
+          <div className="editor-detail-buttons">
+            <img className="save-button"
+              src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
+              onClick={this.save}/>
+            <TagForm tags={this.state.tags} suggestions={this.props.allTags} />
+          </div>
         </header>
 
         <br />

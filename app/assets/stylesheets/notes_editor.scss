@@ -21,9 +21,15 @@
   z-index: 0;
 }
 
-.save-button {
-  width: 15px;
+.editor-detail-buttons {
+  display: flex;
   margin: 30px 25px 13px 25px;
+  align-items: center;
+}
+
+.save-button {
+  width: 20px;
+  height: 20px;
   padding: 3px;
   border: 3px solid transparent;
   border-radius: 10px;

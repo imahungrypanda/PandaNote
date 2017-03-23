@@ -15,3 +15,7 @@ export const selectFirstNote = notes => {
   let keys = Object.keys(notes);
   return notes[keys[0]];
 }
+
+export const tagName = tags => (
+  Object.keys(tags).map(id => tags[id].name)
+)
