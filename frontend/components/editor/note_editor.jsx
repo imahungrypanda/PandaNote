@@ -14,6 +14,7 @@ class NoteEditor extends React.Component {
 
     this.bodyUpdate = this.bodyUpdate.bind(this);
     this.titleUpdate = this.titleUpdate.bind(this);
+    this.save = this.save.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -32,6 +33,14 @@ class NoteEditor extends React.Component {
     }
   }
 
+  save(e) {
+    e.preventDefault();
+    const { id, title, value } = this.state;
+    this.props.save({ id, title, body: value.toString('html') })
+      .then(({ note }) => this.props.setCurrentNote(note));
+
+  }
+
   titleUpdate(e) {
     this.setState({ title: e.currentTarget.value });
   }
@@ -48,6 +57,9 @@ class NoteEditor extends React.Component {
             className="note-title"
             value={this.state.title}
             onChange={this.titleUpdate} />
+          <img className="save-button"
+            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
+            onClick={this.save}/>
         </header>
 
         <br />

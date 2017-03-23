@@ -29,6 +29,7 @@ const NotesReducer = (state = _nullState, action) => {
 
     case UPDATE_NOTE:
       newState.allNotes[action.note.id] = action.note;
+      // newState.currentNote = action.note;
       return newState;
 
     case MAKE_NOTE:

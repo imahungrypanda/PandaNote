@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
-import { updateNote } from '../../actions/notes_actions';
+import { updateNote, setCurrentNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  setCurrentNote: note => dispatch(setCurrentNote(note)),
   save: note => dispatch(updateNote(note))
 });
 
