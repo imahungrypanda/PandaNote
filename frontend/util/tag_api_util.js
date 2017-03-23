@@ -25,13 +25,3 @@ export const deleteTag = (tagId, noteId) => (
     data: {tag: {id: tagId, note_id: noteId}}
   })
 );
-
-
-
-export const deleteTagging = (tag, noteId) => (
-  $.ajax({
-    method: "DELETE",
-    url: `/api/tagging/${tag.id}`,
-    data: {tag: {id: `${tag.id}`, note_id: noteId}}
-  })
-);

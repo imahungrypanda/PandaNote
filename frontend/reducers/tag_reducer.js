@@ -1,9 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_TAGS,
-         RECEIVE_NOTE_TAGS,
          MAKE_TAG,
          REMOVE_TAG,
-         REMOVE_TAGGING,
          SET_CURRENT_TAG
        } from '../actions/tag_actions';
 
@@ -20,10 +18,6 @@ const TagsReducer = (state = _nullTag, action) => {
   switch (action.type) {
     case RECEIVE_TAGS:
       newState.allTags = action.tags;
-      return newState;
-
-    case RECEIVE_NOTE_TAGS:
-      newState.currentNoteTags = action.tags;
       return newState;
 
     case MAKE_TAG:

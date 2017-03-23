@@ -24,8 +24,6 @@ class Api::NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     if @note.update_attributes(note_params)
-      # debugger
-      # render json: @note
       render :show
     else
       render( json: ["Unable to update note"], status: 503)
@@ -40,16 +38,6 @@ class Api::NotesController < ApplicationController
       render :show
     else
       render( json: ["Nothing to delete"], status: 404)
-    end
-  end
-
-  def tags
-    @note = Note.find(params[:id])
-    if @note
-      @tags = @note.tags
-      render json: @tags
-    else
-      render json: @note.errors.full_messages, status: 422
     end
   end
 

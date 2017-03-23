@@ -25,14 +25,11 @@ class Api::TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tagging = @tag.taggings.select { |tagging| tagging.note_id == tag_params[:note_id].to_i }.first
-    # @taggings = @tag.taggings
 
-# debugger
-
-  if @tag.taggings.length > 1
-    @tagging.delete
-    render json: @tag
-  elsif @tag
+    if @tag.taggings.length > 1
+      @tagging.delete
+      render json: @tag
+    elsif @tag
       @tag.destroy
       @tag.taggings.destroy_all
       render json: @tag
@@ -41,16 +38,6 @@ class Api::TagsController < ApplicationController
     end
   end
 
-  # def destroyTagging
-  #   @tag = Tag.find(params[:id])
-  #   @tagging = @tag.taggings.select { |tagging| tagging.note_id == tag_params[:note_id].to_i }.first
-  #   if @tagging
-  #     @tagging.destroy
-  #     render json: @tagging
-  #   else
-  #     render json: @tagging.errors.full_messages, status: 422
-  #   end
-  # end
 
   private
 

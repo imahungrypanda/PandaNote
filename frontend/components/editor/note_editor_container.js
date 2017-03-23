@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
 import { updateNote, setCurrentNote } from '../../actions/notes_actions';
-import { fetchNoteTags } from '../../actions/tag_actions';
 import { tagName } from '../../actions/selector';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   setCurrentNote: note => dispatch(setCurrentNote(note)),
-  save: note => dispatch(updateNote(note)),
-  fetchNoteTags: note => dispatch(fetchNoteTags(note))
+  save: note => dispatch(updateNote(note))
 });
 
 export default connect(
