@@ -83,7 +83,8 @@ class NotebookIndex extends React.Component {
             className="new-notebook-modal"
             onRequestClose={this.closeModal} >
             <NotebookForm close={this.closeModal}
-              createNotebook={this.props.createNotebook} />
+              createNotebook={this.props.createNotebook}
+              setCurrentNotebook={this.props.setCurrentNotebook} />
           </Modal>
 
         </Modal>

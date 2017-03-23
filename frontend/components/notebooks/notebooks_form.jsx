@@ -20,6 +20,7 @@ class NotebookForm extends React.Component {
 
   createNotebook() {
     this.props.createNotebook({title: this.state.newNotebookName})
+      .then(({ notebook }) => this.props.setCurrentNotebook(notebook))
       .then(() => this.props.close());
   }
 
