@@ -59,6 +59,5 @@ export const removeNote = deletedNote => ({
 
 export const setCurrentNote = note => ({
   type: CURRENT_NOTE,
-  note,
-  junk: console.log(note)
+  note
 });

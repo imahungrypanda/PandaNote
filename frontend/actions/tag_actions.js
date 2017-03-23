@@ -22,10 +22,12 @@ export const createTag = (tag, noteId) => dispatch => (
     .then(newTag => dispatch(makeTag(newTag)))
 );
 
-export const deleteTag = tag => dispatch => (
-  APIUTIL.deleteTag(tag)
+export const deleteTag = (id, noteId) => dispatch => {
+  console.log(noteId);
+return(
+  APIUTIL.deleteTag(id, noteId)
     .then(deletedTag => dispatch(removeTag(deletedTag)))
-);
+)};
 
 export const deleteTagging = (tag, note) => dispatch => (
   APIUTIL.deleteTagging(tag, note.id)
@@ -44,8 +46,7 @@ export const receiveNoteTags = tags => ({
 
 export const makeTag = tag => ({
   type: MAKE_TAG,
-  tag,
-  junk: console.log("makeTag: ",tag)
+  tag
 });
 
 export const removeTag = tag => ({

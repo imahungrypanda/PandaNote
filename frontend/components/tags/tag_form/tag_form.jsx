@@ -16,27 +16,31 @@ class TagForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps) {
-      // console.log(newProps.tags);
-      
-      this.setState({tags: newProps.tags, suggestions: newProps.suggestions});
+      console.log("newProps: ", newProps);
+      this.setState({tags: newProps.currentNote.tags, suggestions: newProps.allTags});
     }
   }
 
   handleDelete(i) {
     let tags = this.state.tags;
+    this.props.deleteTag(tags[i].id, this.props.currentNote.id);
+
     tags.splice(i, 1);
     this.setState({tags: tags});
   }
 
   handleAddition(tag) {
     let tags = this.state.tags;
-    tags.push({
-      id: tags.length + 1,
-      text: tag
-    });
-    this.setState({tags: tags});
-  }
 
+    this.props.saveTag(tag, this.props.currentNote.id)
+      .then(({ tag }) => {
+        tags.push({
+          id: tag.id,
+          text: tag.name
+        });
+        this.setState({ tags: tags });
+      });
+  }
 
   handleDrag(tag, currPos, newPos) {
     let tags = this.state.tags;
@@ -56,7 +60,8 @@ class TagForm extends React.Component {
           suggestions={this.state.suggestions}
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}
-          handleDrag={this.handleDrag} />
+          handleDrag={this.handleDrag}
+          allowDeleteFromEmptyInput={false} />
       </div>
     );
   }

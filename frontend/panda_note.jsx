@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { fetchTags, createTag, deleteTags } from './actions/tag_actions';
+import { fetchTags, createTag, deleteTag } from './actions/tag_actions';
 
 window.fetchTags = fetchTags;
-window.deleteTags = deleteTags;
+window.deleteTag = deleteTag;
 window.createTag = createTag;
 
 

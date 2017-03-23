@@ -39,6 +39,7 @@ div.ReactTags__selected a.ReactTags__remove {
 /* Styles for suggestions */
 div.ReactTags__suggestions {
     position: absolute;
+    z-index: 1;
 }
 div.ReactTags__suggestions ul {
     list-style-type: none;

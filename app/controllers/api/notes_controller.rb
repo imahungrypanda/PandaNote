@@ -24,6 +24,8 @@ class Api::NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     if @note.update_attributes(note_params)
+      # debugger
+      # render json: @note
       render :show
     else
       render( json: ["Unable to update note"], status: 503)
