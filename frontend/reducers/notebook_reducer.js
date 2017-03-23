@@ -26,7 +26,6 @@ const NotebookReducer = (state = _nullState, action) => {
       return newState;
 
     case DELETE_NOTEBOOK:
-      // debugger
       delete newState.allNotebooks[action.notebook.id];
       newState.currentNotebook = null;
       return newState;

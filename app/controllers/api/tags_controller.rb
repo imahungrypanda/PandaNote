@@ -11,8 +11,22 @@ class Api::TagsController < ApplicationController
     render json: @tags.uniq
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+    @tagged_notes = []
+    notes = current_user.notes.includes(:taggings)
+
+    if @tag
+      notes.each do |note|
+        @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == @tag.id }
+      end
+      render json: @tagged_notes
+    else
+      render json: @tag.errors.full_messages, status: 422
+    end
+  end
+
   def create
-    debugger
     @tag = Tag.find_or_create_by(name: tag_params[:tag_name])
 
     @tagging = Tagging.find_or_create_by(
@@ -32,6 +46,17 @@ class Api::TagsController < ApplicationController
       render json: @tag
     else
       render json: @tag.errors.full_messages, status: 422
+    end
+  end
+
+  def destroyTagging
+    @tag = Tag.find(params[:id])
+    @tagging = @tag.taggings.select { |tagging| tagging.note_id == tag_params[:note_id].to_i }.first
+    if @tagging
+      @tagging.destroy
+      render json: @tagging
+    else
+      render json: @tagging.errors.full_messages, status: 422
     end
   end
 

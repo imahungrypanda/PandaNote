@@ -8,11 +8,14 @@ class NoteIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    if (!this.props.currentNote) {
-      this.props.setCurrentNote(this.props.notes[0]);
-    }
-  }
+  // componentDidMount() {
+  //   if (!this.props.currentNote) {
+  //     this.props.setCurrentNote(this.props.notes[0]);
+  //
+  //     console.log(this.props.notes[0]);
+  //     // this.props.fetchNoteTags(this.props.notes[0]);
+  //   }
+  // }
 
   render () {
     let notes = this.props.notes;

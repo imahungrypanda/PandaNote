@@ -1,41 +1,64 @@
-import * as APIUtil from '../util/tag_api_util';
+import * as APIUTIL from '../util/tag_api_util';
 
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
+export const RECEIVE_NOTE_TAGS = "RECEIVE_NOTE_TAGS";
 export const MAKE_TAG = "MAKE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
+export const REMOVE_TAGGING = "REMOVE_TAGGING";
 export const SET_CURRENT_TAG = "SET_CURRENT_TAG";
 
 export const fetchTags = () => dispatch => (
-  APIUtil.fetchTags()
+  APIUTIL.fetchTags()
     .then(allTags => dispatch(receiveTags(allTags)))
 );
 
-export const createTag = (tag, noteId) => dispatch) => {
-  APIUtil.createTag(tag, noteId)
+export const fetchNoteTags = note => dispatch => (
+  APIUTIL.fetchNoteTags(note.id)
+    .then(tags => dispatch(receiveNoteTags(tags)))
+);
+
+export const createTag = (tag, noteId) => dispatch => (
+  APIUTIL.createTag(tag, noteId)
     .then(newTag => dispatch(makeTag(newTag)))
 );
 
 export const deleteTag = tag => dispatch => (
-  APIUtil.deleteTag(tag)
+  APIUTIL.deleteTag(tag)
     .then(deletedTag => dispatch(removeTag(deletedTag)))
 );
 
-export const receiveTags = allTags => ({
+export const deleteTagging = (tag, note) => dispatch => (
+  APIUTIL.deleteTagging(tag, note.id)
+    .then(tag => dispatch(removeTagging(tag)))
+)
+
+export const receiveTags = tags => ({
   type: RECEIVE_TAGS,
-  allTags
+  tags
 });
 
-export const makeTag = newTag => ({
+export const receiveNoteTags = tags => ({
+  type: RECEIVE_NOTE_TAGS,
+  tags
+})
+
+export const makeTag = tag => ({
   type: MAKE_TAG,
-  newTag
+  tag,
+  junk: console.log("makeTag: ",tag)
 });
 
-export const removeTag = deletedTag => ({
+export const removeTag = tag => ({
   type: REMOVE_TAG,
-  deletedTag
+  tag
 });
 
-export const setCurrentTag = newCurrentTag => ({
+export const removeTagging = tag => ({
+  type: REMOVE_TAGGING,
+  tag
+})
+
+export const setCurrentTag = tag => ({
   type: SET_CURRENT_TAG,
-  newCurrentTag
+  tag
 });

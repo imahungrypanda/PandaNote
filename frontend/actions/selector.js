@@ -7,3 +7,11 @@ export const selectFirstNotebook = notebooks => {
   let keys = Object.keys(notebooks);
   return notebooks[keys[0]];
 };
+
+export const selectFirstNote = notes => {
+  if (!notes) {
+    return null;
+  }
+  let keys = Object.keys(notes);
+  return notes[keys[0]];
+}
