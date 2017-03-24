@@ -2,14 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  height: 35%;
+  width: 300px;
+  height: 350px;
   border: 2px solid black;
   border-radius: 3px;
-  padding: 20px;
   text-align: center;
   background-color: white;
-  margin-top: 25%;
+  margin-top: 20%;
   margin-left: 50%;
   transform: translateX(-50%);
 
@@ -22,7 +21,6 @@
   .login-input {
     height: 20px;
   }
-
 
   .submit {
     background-color: $dark-green;
