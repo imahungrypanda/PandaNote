@@ -34,7 +34,11 @@ const TagsReducer = (state = _nullTag, action) => {
       return newState;
 
     case REMOVE_TAG:
-      newState.allTags.filter(tag => tag !== action.tag)
+      // debugger
+      // tagCount = newState.allTags.filter(tag => tag.name === action.tag.name).length
+      // if (tagCount === 1) {
+        newState.allTags.filter(tag => tag.name !== action.tag.name)
+      // }
       return newState;
 
     case SET_CURRENT_TAG:

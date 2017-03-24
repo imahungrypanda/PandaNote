@@ -17,7 +17,7 @@
 }
 
 .notes-index-container {
-  overflow-y: scroll;
+  overflow: scroll;
   height: 84%;
 }
 
@@ -38,11 +38,16 @@
 
     div {
       section {
-        header {
+        div {
           display: flex;
-          font: Helvetica;
-          font-weight: lighter;
           justify-content: space-between;
+          header {
+            font: Helvetica;
+            font-weight: lighter;
+            overflow: hidden;
+            white-space: nowrap;
+            word-wrap: break-word;
+          }
           img {
             width: 15px;
             height: 15px;

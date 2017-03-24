@@ -43,12 +43,14 @@ class NoteIndexItem extends React.Component {
       <li  className={this.selected()} >
         <div>
           <section onClick={this.setCurrentNote(note)} >
-            <header>{note.title}
-              <img
-                className="delete-note"
-                src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
-                onClick={this.removeNote(note)}/>
-            </header>
+            <div>
+              <header>{note.title}</header>
+                <img
+                  className="delete-note"
+                  src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                  onClick={this.removeNote(note)}/>
+
+            </div>
             <Moment format="MM/DD/YYYY">{note.created_at}</Moment>
             <p>{note.body.replace(/<(?:.|\n)*?>/gm, '')}</p>
           </section>

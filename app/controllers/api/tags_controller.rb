@@ -19,7 +19,7 @@ class Api::TagsController < ApplicationController
       notes.each do |note|
         @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == @tag.id }
       end
-      render :show 
+      render :show
     else
       render json: @tag.errors.full_messages, status: 422
     end
@@ -42,7 +42,7 @@ class Api::TagsController < ApplicationController
 
     if @tag.taggings.length > 1
       @tagging.delete
-      render json: @tag
+      render json: [ "keep" ]
     elsif @tag
       @tag.destroy
       @tag.taggings.destroy_all
