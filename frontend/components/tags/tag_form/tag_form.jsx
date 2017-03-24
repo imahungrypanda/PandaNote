@@ -15,7 +15,7 @@ class TagForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps) {
+    if (newProps.currentNote) {
       this.setState({tags: newProps.currentNote.tags, suggestions: newProps.allTags});
     }
   }
