@@ -1,28 +1,27 @@
-== README
+# PandaNote
+[PandaNote Live][heroku]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[][logo]
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+PandaNote is a full-stack single page web application inspired by Evernote. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+
+
+
+## Features & Implementation
+
+(highlight features of the app)
+
+### Feature 1
+
+### Feature 2
+
+### Feature 3
+
+## Future Directions for the Project
+
+
+[heroku]: http://pandanote.herokuapp.com/
+[logo]:   /docs/logos/panda_icon_1.png
+[splash]: /docs/screen_shots/splash.png
+[home]:   /docs/screen_shots/home.png
