@@ -22,8 +22,9 @@ class TagsIndex extends React.Component {
   setTag(tag){
     return (e) => {
       e.preventDefault();
-      this.props.setCurrentTag(tag);
-      this.props.fetchTagNotes(tag.id);
+      this.props.fetchTagNotes(tag.id)
+        .then(()=> this.props.setCurrentTag(tag))
+      // this.props.setCurrentTag(tag);
       this.closeModal();
     }
   }

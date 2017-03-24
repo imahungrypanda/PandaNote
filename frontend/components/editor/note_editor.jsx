@@ -53,9 +53,9 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    if (this.props.currentNote) {
-      // console.log(this.props.currentNote.tags);
-    }
+    // if (this.props.currentNote) {
+    //   // console.log(this.props.currentNote.tags);
+    // }
 
     return (
       <section className="notes-editor">

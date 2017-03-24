@@ -15,7 +15,6 @@ const NotesReducer = (state = _nullState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   let keys = null;
-  // console.log(action);
 
   switch (action.type) {
     case RECEIVE_ALL_NOTES:
