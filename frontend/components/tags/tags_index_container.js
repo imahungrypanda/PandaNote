@@ -4,6 +4,7 @@ import { deleteTag,
          fetchTagNotes,
          setCurrentTag
        } from '../../actions/tag_actions';
+import { setCurrentNotebook } from '../../actions/notebook_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -16,7 +17,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   deleteTag: (tagId, noteId) => dispatch(deleteTag(tagId, noteId)),
   setCurrentTag: tag => dispatch(setCurrentTag(tag)),
-  fetchTagNotes: id => dispatch(fetchTagNotes(id))
+  fetchTagNotes: id => dispatch(fetchTagNotes(id)),
+  setCurrentNotebook: notebook => dispatch(setCurrentNotebook(notebook))
 });
 
 export default connect(

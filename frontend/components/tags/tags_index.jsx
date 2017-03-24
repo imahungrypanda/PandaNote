@@ -22,6 +22,7 @@ class TagsIndex extends React.Component {
   setTag(tag){
     return (e) => {
       e.preventDefault();
+      this.props.setCurrentNotebook(null);
       this.props.fetchTagNotes(tag.id)
         .then(()=> this.props.setCurrentTag(tag))
       this.closeModal();
