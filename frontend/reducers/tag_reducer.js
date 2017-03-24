@@ -23,13 +23,11 @@ const TagsReducer = (state = _nullTag, action) => {
       return newState;
 
     case RECEIVE_TAG_NOTES:
-      // console.log(action);
       newState.currentTagNotes = action.notes
-      // console.log(newState);
       return newState;
 
     case MAKE_TAG:
-      let tagCount = newState.allTags.filter(tag => tag.name === action.tag.name)
+      let tagCount = newState.allTags.filter(tag => tag.name === action.tag.name).length
       if (tagCount === 0) {
         newState.allTags.push(action.tag);
       }
