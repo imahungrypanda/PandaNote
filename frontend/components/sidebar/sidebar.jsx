@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter, hashHistory } from 'react-router';
 import NotebooksIndex from '../notebooks/notebooks_container';
+import TagsIndex from '../tags/tags_index_container';
 
 const style = {
   overlay: {
@@ -16,11 +17,11 @@ class Sidebar extends React.Component {
 
     this.state = {
       userModal: false,
-      notebookModal: false,
-      newNotebookModal: false,
-      tagsModal: false,
-      newTagModal: false,
-      newNotebookName: ""
+      // notebookModal: false,
+      // newNotebookModal: false,
+      // tagsModal: false,
+      // newTagModal: false,
+      // newNotebookName: ""
      };
 
     this.closeModal = this.closeModal.bind(this);
@@ -34,12 +35,9 @@ class Sidebar extends React.Component {
   }
 
   closeModal() {
-    this.setState({userModal: false,
-    notebookModal: false,
-    newNotebookModal: false,
-    tagsModal: false,
-    newTagModal: false
-  });
+    this.setState({
+      userModal: false
+    });
   }
 
   noteLogout() {
@@ -92,21 +90,7 @@ class Sidebar extends React.Component {
 
           <NotebooksIndex />
 
-
-
-
-          <img className="tags-icon"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png"
-            alt="tags"
-            onClick={() => this.setState({tagsModal: true})}></img>
-          <Modal
-            isOpen={this.state.tagsModal}
-            contentLabel="Modal"
-            className="tags-modal"
-
-            onRequestClose={this.closeModal}>
-            <input className="button" type="button" value="Logout" onClick={this.noteLogout} />
-          </Modal>
+          <TagsIndex />
 
         </section>
 
