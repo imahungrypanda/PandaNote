@@ -11,10 +11,24 @@
 }
 
 .splash-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 87%;
   background-image: url(http://res.cloudinary.com/dbf0xwan5/image/upload/q_40/v1489603020/splash_photo_edza7r.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
+
+  h1 {
+    border: 3px solid $dark-green;
+    background-color: $tan;
+    color: $dark-green;
+    border-radius: 5px;
+    padding: 13px 25px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+  }
 }
 
 .header-logo {

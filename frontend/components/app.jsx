@@ -13,7 +13,9 @@ const App = ({ children }) => (
       </Link>
       <Greeting />
     </header>
-    <section className="splash-photo"></section>
+    <section className="splash-photo">
+      <h1 className="splash-tagline">Remember everything.</h1>
+      </section>
     <footer className="splash-footer"></footer>
     { children }
   </div>
