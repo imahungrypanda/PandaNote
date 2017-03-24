@@ -22,7 +22,6 @@ class NoteIndexItem extends React.Component {
   setCurrentNote(note) {
     return (e) => {
       e.preventDefault();
-      // console.log(note);
       this.props.currentNote.className = "";
       this.props.setCurrentNote(note);
       e.currentTarget.className = "selected";
@@ -38,7 +37,6 @@ class NoteIndexItem extends React.Component {
 
   render () {
     let note = this.props.note;
-    // console.log(note);
     let selected = "";
 
     return (

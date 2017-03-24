@@ -26,7 +26,6 @@ class NoteEditor extends React.Component {
             && newProps.currentNote.id !== this.state.id
             && newProps.allNotes[this.state.id]) {
 
-        // this.props.fetchNoteTags(newProps.currentNote);
         const { id, title, value } = this.state;
         this.props.save({ id, title, body: value.toString('html') });
       }
@@ -53,10 +52,6 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    // if (this.props.currentNote) {
-    //   // console.log(this.props.currentNote.tags);
-    // }
-
     return (
       <section className="notes-editor">
         <header className="notes-editor-header">
