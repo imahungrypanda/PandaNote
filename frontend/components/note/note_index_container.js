@@ -6,7 +6,7 @@ import { fetchNotes,
          fetchNote,
          deleteNote,
          setCurrentNote } from '../../actions/notes_actions';
-import { fetchNoteTags } from '../../actions/tag_actions';
+import { fetchTagNotes } from '../../actions/tag_actions';
 import { notesToArray } from '../../actions/selector';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
     notes: notesToArray(state.notes.allNotes),
     currentNote: state.notes.currentNote,
     currentNotebook: state.notebook.currentNotebook,
-    currentTag: state.tags.currentTag
+    currentTag: state.tags.currentTag,
+    currentTagNotes: notesToArray(state.tags.currentTagNotes)
   });
 };
 
@@ -23,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   fetchNotes: () => dispatch(fetchNotes()),
   fetchNote: note => dispatch(fetchNote(note)),
-  fetchNoteTags: note => dispatch(fetchNoteTags(note)),
+  fetchTagNotes: tagId => dispatch(fetchTagNotes(tagId)),
   setCurrentNote: note => dispatch(setCurrentNote(note))
 })
 

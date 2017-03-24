@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import TagsIndex from './tags_index';
 import { deleteTag,
+         fetchTagNotes,
          setCurrentTag
        } from '../../actions/tag_actions';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   deleteTag: (tagId, noteId) => dispatch(deleteTag(tagId, noteId)),
-  setCurrentTag: tag => dispatch(setCurrentTag(tag))
+  setCurrentTag: tag => dispatch(setCurrentTag(tag)),
+  fetchTagNotes: id => dispatch(fetchTagNotes(id))
 });
 
 export default connect(

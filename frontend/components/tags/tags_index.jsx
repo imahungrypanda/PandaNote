@@ -10,6 +10,7 @@ class TagsIndex extends React.Component {
     }
 
     this.closeModal = this.closeModal.bind(this);
+    this.setTag = this.setTag.bind(this);
   }
 
   closeModal() {
@@ -22,12 +23,10 @@ class TagsIndex extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.setCurrentTag(tag);
+      this.props.fetchTagNotes(tag.id);
       this.closeModal();
     }
   }
-
-
-
 
   render(){
     return (

@@ -47,6 +47,7 @@ class Sidebar extends React.Component {
 
   notesHome() {
     this.props.setCurrentNotebook(null);
+    this.props.clearTag();
     hashHistory.replace('/home');
   }
 

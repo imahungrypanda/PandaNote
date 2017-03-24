@@ -1,14 +1,16 @@
 import merge from 'lodash/merge';
 import { RECEIVE_TAGS,
+         RECEIVE_TAG_NOTES,
          MAKE_TAG,
          REMOVE_TAG,
-         SET_CURRENT_TAG
+         SET_CURRENT_TAG,
+         CLEAR_TAG
        } from '../actions/tag_actions';
 
 const _nullTag = {
   currentTag: null,
   allTags: [],
-  currentNoteTags: []
+  currentTagNotes: []
 };
 
 const TagsReducer = (state = _nullTag, action) => {
@@ -18,6 +20,12 @@ const TagsReducer = (state = _nullTag, action) => {
   switch (action.type) {
     case RECEIVE_TAGS:
       newState.allTags = action.tags;
+      return newState;
+
+    case RECEIVE_TAG_NOTES:
+      // console.log(action);
+      newState.currentTagNotes = action.notes
+      // console.log(newState);
       return newState;
 
     case MAKE_TAG:
@@ -33,6 +41,11 @@ const TagsReducer = (state = _nullTag, action) => {
 
     case SET_CURRENT_TAG:
       newState.currentTag = action.tag;
+      return newState;
+
+    case CLEAR_TAG:
+      newState.currentTag = null;
+      newState.currentTagNotes = [];
       return newState;
 
     default:

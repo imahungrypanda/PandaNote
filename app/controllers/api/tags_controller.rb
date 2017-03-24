@@ -10,6 +10,20 @@ class Api::TagsController < ApplicationController
     render json: @tags.uniq
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+
+    @tagged_notes = []
+    notes = current_user.notes.includes(:taggings)
+    if @tag
+      notes.each do |note|
+        @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == @tag.id }
+      end
+      render json: @tagged_notes
+    else
+      render json: @tag.errors.full_messages, status: 422
+    end
+  end
 
   def create
     @tag = Tag.find_or_create_by(name: tag_params[:tag_name])

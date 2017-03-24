@@ -4,11 +4,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { fetchTags, createTag, deleteTag } from './actions/tag_actions';
+import { fetchTagNotes } from './actions/tag_actions';
 
-window.fetchTags = fetchTags;
-window.deleteTag = deleteTag;
-window.createTag = createTag;
+window.fetchTagNotes = fetchTagNotes;
 
 
 document.addEventListener("DOMContentLoaded", () => {

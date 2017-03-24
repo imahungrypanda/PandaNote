@@ -25,9 +25,13 @@ class NoteIndex extends React.Component {
       noteHeader = this.props.currentNotebook.title;
       notes = notes.filter(note => note.notebook_id === this.props.currentNotebook.id);
     }
-    // else if (this.props.currentTag) {
-      console.log(this.props.currentTag);
-    // }
+    else if (this.props.currentTag) {
+      // console.log(this.props.currentTag);
+      // this.props.fetchTagNotes(this.props.currentTag.id)
+      //   .then(tagNotes => console.log(tagNotes));
+      noteHeader = this.props.currentTag.name;
+      notes = this.props.currentTagNotes;
+    }
 
 
     return (

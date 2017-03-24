@@ -4,9 +4,9 @@ export const fetchTags = () => (
   })
 );
 
-export const fetchNoteTags = id => (
+export const fetchTagNotes = id => (
   $.ajax({
-    url: `/api/notes/${id}/tags`
+    url: `/api/tags/${id}`
   })
 );
 
