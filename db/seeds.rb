@@ -26,7 +26,7 @@ Tag.create!([
   {name: "Recipes"},
   {name: "Bread"},
   {name: "Tasty"},
-  {name: "Desert"},
+  {name: "Dessert"},
   {name: "Dinner"},
   {name: "School"}
 ])
