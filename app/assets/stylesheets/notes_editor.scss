@@ -1,7 +1,6 @@
 .notes-editor {
   width: 75%;
   min-width: 350px;
-  overflow: scroll;
 }
 
 .notes-editor-header {
@@ -36,6 +35,7 @@
   border-radius: 10px;
 }
 img.save-button:hover {
+  cursor: pointer;
   background-color: $tan;
   border-color: $light-green;
 }
@@ -44,6 +44,12 @@ img.save-button:hover {
 div.RichTextEditor__root___2QXK- {
   border: 0px solid transparent;
   border-top: 1px solid #ddd;
+  height: 80vh;
+
+  .RichTextEditor__editor___1QqIU {
+    height: 92%;
+    font-family: helvetica,sans-seri;
+  }
 }
 
 span.Dropdown_root__3ALmx {
@@ -64,4 +70,6 @@ span.Dropdown__root___3ALmx {
 
 div.DraftEditor-editorContainer {
   z-index: 0;
+  padding: 3px 20px;
+  height: 100%;
 }

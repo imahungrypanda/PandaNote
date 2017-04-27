@@ -30,6 +30,9 @@
       width: 45px;
       height: auto;
     }
+    .new-note-icon:hover {
+      cursor: pointer;
+    }
   }
 
   .sidebar-actions {
@@ -45,6 +48,7 @@
     }
 
     img:hover {
+      cursor: pointer;
       border-color: $dark-green;
       background-color: $tan;
     }
@@ -53,6 +57,10 @@
   .user-profile {
     width: 50px;
     margin-top: 150px;
+  }
+
+  .user-profile:hover {
+    cursor: pointer;
   }
 }
 
