@@ -7,7 +7,7 @@ const App = ({ children }) => (
     <header className="splash-header-container">
       <Link to="/" className="header-logo">
         <img className="header-panda-logo"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489603019/panda_logo_fhv0z7.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489603019/panda_logo_fhv0z7.png"
           alt="logo"></img>
         <h1 className="header-site-name">PandaNote</h1>
       </Link>

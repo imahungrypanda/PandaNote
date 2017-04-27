@@ -61,7 +61,7 @@ class NoteEditor extends React.Component {
             onChange={this.titleUpdate} />
           <div className="editor-detail-buttons">
             <img className="save-button"
-              src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
+              src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
               onClick={this.save}/>
             <TagForm  />
           </div>

@@ -87,21 +87,21 @@ class SidebarActions extends React.Component {
     <div>
       <section className="sidebar-new-note">
         <img className="new-note-icon"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
           alt="new-note"
           onClick={this.createNote}></img>
       </section>
 
       <section className="sidebar-actions">
         <img className="notes-icon"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
           alt="notes"
           onClick={this.notesHome}></img>
 
 
 
         <img className="notebook-icon"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
           alt="notebooks"
           onClick={() => this.setState({notebookModal: true})}></img>
 
@@ -127,7 +127,7 @@ class SidebarActions extends React.Component {
 
 
         <img className="tags-icon"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png"
           alt="tags"
           onClick={() => this.setState({tagsModal: true})}></img>
         <Modal

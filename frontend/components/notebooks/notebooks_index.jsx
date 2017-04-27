@@ -45,7 +45,7 @@ class NotebookIndex extends React.Component {
     return (
       <section>
         <img className="notebook-icon"
-          src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
+          src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
           alt="notebooks"
           onClick={() => this.setState({notebookModal: true})}></img>
 
@@ -67,7 +67,7 @@ class NotebookIndex extends React.Component {
                   <h4 className="notebook-title">{notebook.title}
                     <img
                     className="delete-notebook"
-                    src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                    src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
                     onClick={this.removeNotebook(notebook)}/>
                     </h4>
                   </div>

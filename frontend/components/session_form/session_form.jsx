@@ -105,13 +105,10 @@ class SessionForm extends React.Component {
                 placeholder="Password" />
 
               <br/>
-
-              <input className="button submit" type="submit" value="Submit" />
-
               <br/>
 
-              <input className="button demo" type="button" value="Demo" onClick={this.demo} />
               <input className="button cancel" type="button" value="Cancel" onClick={this.closeModal} />
+              <input className="button submit" type="submit" value="Submit" />
             </div>
           </form>
         </Modal>
@@ -121,3 +118,6 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
+
+
+// <input className="button demo" type="button" value="Demo" onClick={this.demo} />

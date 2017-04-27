@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   height: 87%;
-  background-image: url(http://res.cloudinary.com/dbf0xwan5/image/upload/q_40/v1489603020/splash_photo_edza7r.jpg);
+  background-image: url(https://res.cloudinary.com/dbf0xwan5/image/upload/q_40/v1489603020/splash_photo_edza7r.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -33,10 +33,12 @@
 
 .header-logo {
   float: left;
+  padding: 0px 15px;
 }
 
 .session-links {
   float: right;
+  font-size: 18px;
   a {
     color: $tan;
   }
@@ -48,6 +50,14 @@
   h1 {
     color: $tan;
   }
+}
+
+.login-link {
+  padding: 0px 10px;
+}
+
+.signup-link {
+  padding-right: 10px;
 }
 
 

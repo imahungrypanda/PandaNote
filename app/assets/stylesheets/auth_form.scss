@@ -24,17 +24,22 @@
 
   .submit {
     background-color: $dark-green;
+    margin: 0px 5px;
   }
 
   .demo {
     background-color: $dark-green;
-    margin-right: 5px;
+    margin: 0px 5px;
   }
 
   .cancel {
     background-color: $dark-green;
-    margin-left: 5px;
+    margin: 0px 5px;
   }
+}
+
+.input.button.submit {
+  padding-top: 15px;
 }
 
 .button {

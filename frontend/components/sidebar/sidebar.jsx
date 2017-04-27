@@ -70,19 +70,19 @@ class Sidebar extends React.Component {
     return (
       <aside className="sidebar">
         <section className="sidebar-logo">
-          <img className="logo" src="http://res.cloudinary.com/dbf0xwan5/image/upload/v1489603019/panda_logo_fhv0z7.png" alt="logo"></img>
+          <img className="logo" src="https://res.cloudinary.com/dbf0xwan5/image/upload/v1489603019/panda_logo_fhv0z7.png" alt="logo"></img>
         </section>
 
         <section className="sidebar-new-note">
           <img className="new-note-icon"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
+            src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
             alt="new-note"
             onClick={this.createNote}></img>
         </section>
 
         <section className="sidebar-actions">
           <img className="notes-icon"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
+            src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
             alt="notes"
             onClick={this.notesHome}></img>
 
@@ -99,7 +99,7 @@ class Sidebar extends React.Component {
 
         <section className="user-profile">
           <img className="user-profile-icon"
-            src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489696563/user_copy_rfe19e.png"
+            src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489696563/user_copy_rfe19e.png"
             alt="profile"
             onClick={() => this.setState({userModal: true})}></img>
 

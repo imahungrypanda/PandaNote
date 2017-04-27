@@ -47,7 +47,7 @@ class NoteIndexItem extends React.Component {
               <header>{note.title}</header>
                 <img
                   className="delete-note"
-                  src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                  src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
                   onClick={this.removeNote(note)}/>
 
             </div>
