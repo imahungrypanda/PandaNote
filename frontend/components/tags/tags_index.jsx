@@ -35,6 +35,7 @@ class TagsIndex extends React.Component {
         <img className="tags-icon"
           src="http://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694744/price-tag_yqofit.png"
           alt="tags"
+          data-tip="Tags"
           onClick={() => this.setState({tagsModal: true})}></img>
 
         <Modal

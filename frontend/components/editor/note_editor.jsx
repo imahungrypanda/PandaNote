@@ -1,6 +1,8 @@
 import React from 'react';
 import RichTextEditor from 'react-rte';
 import TagForm from '../tags/tag_form/tag_form_container';
+import ReactTooltip from 'react-tooltip'
+
 
 class NoteEditor extends React.Component {
   constructor(props) {
@@ -61,10 +63,12 @@ class NoteEditor extends React.Component {
             onChange={this.titleUpdate} />
           <div className="editor-detail-buttons">
             <img className="save-button"
+              data-tip="Save Note"
               src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490113936/interface_ulxzah.png"
               onClick={this.save}/>
             <TagForm  />
           </div>
+          <ReactTooltip />
         </header>
 
         <br />

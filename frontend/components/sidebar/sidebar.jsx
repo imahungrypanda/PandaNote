@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { Link, withRouter, hashHistory } from 'react-router';
 import NotebooksIndex from '../notebooks/notebooks_container';
 import TagsIndex from '../tags/tags_index_container';
+import ReactTooltip from 'react-tooltip'
 
 const style = {
   overlay: {
@@ -77,6 +78,7 @@ class Sidebar extends React.Component {
           <img className="new-note-icon"
             src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489693892/plus_copy_ijh8cy.png"
             alt="new-note"
+            data-tip="New Note"
             onClick={this.createNote}></img>
         </section>
 
@@ -84,23 +86,19 @@ class Sidebar extends React.Component {
           <img className="notes-icon"
             src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694567/note_tvm6tj.png"
             alt="notes"
+            data-tip="All Notes"
             onClick={this.notesHome}></img>
 
-
-
-
           <NotebooksIndex />
-
           <TagsIndex />
-
         </section>
-
 
 
         <section className="user-profile">
           <img className="user-profile-icon"
             src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489696563/user_copy_rfe19e.png"
             alt="profile"
+            data-tip="Profile"
             onClick={() => this.setState({userModal: true})}></img>
 
           <Modal
@@ -113,6 +111,7 @@ class Sidebar extends React.Component {
           </Modal>
         </section>
 
+        <ReactTooltip />
       </aside>
     )
   }

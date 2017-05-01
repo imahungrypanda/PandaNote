@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment'
+import ReactTooltip from 'react-tooltip'
 
 
 class NoteIndexItem extends React.Component {
@@ -48,12 +49,14 @@ class NoteIndexItem extends React.Component {
                 <img
                   className="delete-note"
                   src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1490117304/trash_ho5zog.png"
+                  data-tip="Delete Note"
                   onClick={this.removeNote(note)}/>
 
             </div>
             <Moment format="MM/DD/YYYY">{note.created_at}</Moment>
             <p>{note.body.replace(/<(?:.|\n)*?>/gm, '')}</p>
           </section>
+          <ReactTooltip />
         </div>
       </li>
     )

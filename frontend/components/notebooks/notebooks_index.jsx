@@ -47,6 +47,7 @@ class NotebookIndex extends React.Component {
         <img className="notebook-icon"
           src="https://res.cloudinary.com/dbf0xwan5/image/upload/q_10/v1489694661/notebook_cdliou.png"
           alt="notebooks"
+          data-tip="Notebooks"
           onClick={() => this.setState({notebookModal: true})}></img>
 
         <Modal
