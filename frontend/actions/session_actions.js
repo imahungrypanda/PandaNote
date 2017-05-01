@@ -11,9 +11,7 @@ export const login = user => dispatch => (
   APIUTIL.login(user)
     .then(usr => dispatch(receiveCurrentUser(usr)),
           err => dispatch(receiveErrors(err.responseJSON)))
-    .then(() => {
-      console.log(this);
-      dispatch(fetchNotes())})
+    .then(() => dispatch(fetchNotes()))
     .then(() => dispatch(fetchNotebooks()))
     .then(() => dispatch(fetchTags()))
 );
