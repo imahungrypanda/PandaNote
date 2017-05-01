@@ -10,9 +10,9 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchNotes();
-    this.props.fetchNotebooks();
-    this.props.fetchTags();
+    // this.props.fetchNotes();
+    // this.props.fetchNotebooks();
+    // this.props.fetchTags();
   }
 
   render(){

@@ -1,5 +1,6 @@
 class Api::NotesController < ApplicationController
   def index
+    # debugger
     @notes = current_user.notes
     render :index
   end

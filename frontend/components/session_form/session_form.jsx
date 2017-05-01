@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
       this.demo = this.demo.bind(this);
+      this.form = this.form.bind(this);
   }
 
   componentWillMount() {
@@ -21,6 +22,9 @@ class SessionForm extends React.Component {
  componentDidUpdate() {
    if (this.props.loggedIn) {
      this.props.router.push("/home");
+   }
+   if (this.props.formType === "demo_login") {
+     this.demo();
    }
  }
 
@@ -53,11 +57,15 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    if (this.props.formType === "login") {
-      return <Link to="/signup">sign up instead</Link>;
+    if (this.props.formType !== "signup") {
+        return <Link to="/signup">sign up instead</Link>;
     } else {
       return <Link to="/login">log in instead</Link>;
     }
+  }
+
+  form() {
+
   }
 
   renderErrors() {
