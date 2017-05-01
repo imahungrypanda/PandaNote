@@ -17,14 +17,14 @@ class SessionForm extends React.Component {
   componentWillMount() {
     this.openModal();
     Modal.setAppElement('body');
+    if (this.props.formType === "demo_login") {
+      this.demo();
+    }
  }
 
  componentDidUpdate() {
    if (this.props.loggedIn) {
      this.props.router.push("/home");
-   }
-   if (this.props.formType === "demo_login") {
-     this.demo();
    }
  }
 
@@ -47,11 +47,13 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log("handleSubmit");
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
 
   demo() {
+    console.log("demo");
     const user = Object.assign({}, {username: "guest", password: "password"}) ;
     this.props.login(user);
   }
