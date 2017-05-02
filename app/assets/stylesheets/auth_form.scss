@@ -1,3 +1,5 @@
+
+
 .auth-form-modal {
   display: flex;
   justify-content: center;
@@ -8,9 +10,6 @@
   border-radius: 3px;
   text-align: center;
   background-color: white;
-  margin-top: 20%;
-  margin-left: 50%;
-  transform: translateX(-50%);
 
   input {
     margin-top: 15px;
@@ -27,6 +26,23 @@
     margin: 10px 5px;
 
   }
+}
+
+.login-form-box, .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-buttons{
+  margin-top: 10px;
+}
+
+.auth-form-error {
+  padding-top: 10px;
+  color: red;
+  font-size: 12px;
 }
 
 .button {

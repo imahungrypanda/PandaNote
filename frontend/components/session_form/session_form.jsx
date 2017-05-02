@@ -52,8 +52,22 @@ class SessionForm extends React.Component {
   }
 
   demo() {
-    const user = Object.assign({}, {username: "guest", password: "password"}) ;
-    this.props.login(user);
+    const username = "guest".split('');
+    const password = "password".split('');
+    const user = Object.assign({}, {username: "guest", password: "password"});
+
+    let interval = setInterval( () => {
+      if (username.length) {
+        this.setState({ username: this.state.username + username.shift() });
+      }
+      else if (password.length) {
+        this.setState({ password: this.state.password + password.shift() });
+      }
+      else {
+        clearInterval(interval);
+        this.props.login(user);
+      }
+    }, 80);
   }
 
   navLink() {
@@ -80,47 +94,39 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="auth-form">
-        <Modal isOpen={this.state.modalIsOpen}
-          contentLabel="Modal"
-          className="auth-form-modal"
-          onRequestClose={this.closeModal} >
+      <Modal isOpen={this.state.modalIsOpen}
+        contentLabel="Modal"
+        className="auth-form-modal"
+        onRequestClose={this.closeModal} >
+          <div className="auth-form">
 
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to PandaNote!
-            <br/>
-            Please {this.props.formType}
-            <br/>
-            or {this.navLink()}
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <div>Welcome to PandaNote!</div>
+              <div>Please {this.props.formType}</div>
+              <div>or {this.navLink()}</div>
+              <div>{this.renderErrors()}</div>
 
-            {this.renderErrors()}
+              <div className="login-form">
+                <input type="text"
+                  className="login-input"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username" />
 
-            <div className="login-form">
-              <br/>
+                <input type="password"
+                  className="login-input"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password" />
+              </div>
 
-              <input type="text"
-                className="login-input"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username" />
-
-              <br/>
-
-              <input type="password"
-                className="login-input"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password" />
-
-              <br/>
-              <br/>
-
-              <input className="button cancel" type="button" value="Cancel" onClick={this.closeModal} />
-              <input className="button submit" type="submit" value="Submit" />
-            </div>
-          </form>
-        </Modal>
-      </div>
+              <div className="input-buttons">
+                <input className="button cancel" type="button" value="Cancel" onClick={this.closeModal} />
+                <input className="button submit" type="submit" value="Submit" />
+              </div>
+            </form>
+        </div>
+      </Modal>
     );
   }
 }
