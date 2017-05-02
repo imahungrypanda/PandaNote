@@ -2,6 +2,14 @@ import React from 'react';
 import Modal from 'react-modal';
 import NotebookForm from './notebooks_form';
 
+const notebookModalStyle = {
+  overlay : {
+    display           : 'flex',
+    justifyContent    : 'center',
+    alignItems       : 'center'
+  }
+};
+
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -81,6 +89,7 @@ class NotebookIndex extends React.Component {
           <Modal
             isOpen={this.state.newNotebookModal}
             contentLabel="Modal"
+            style={notebookModalStyle}
             className="new-notebook-modal"
             onRequestClose={this.closeModal} >
             <NotebookForm close={this.closeModal}

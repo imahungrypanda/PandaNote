@@ -2,6 +2,21 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
 
+const modalStyle = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'rgba(255, 255, 255, 0.75)',
+    display           : 'flex',
+    justifyContent    : 'center',
+    alignItems       : 'center'
+  }
+};
+
+
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
@@ -94,11 +109,13 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+        <div className="auth-form">
       <Modal isOpen={this.state.modalIsOpen}
         contentLabel="Modal"
+        style={modalStyle}
         className="auth-form-modal"
         onRequestClose={this.closeModal} >
-          <div className="auth-form">
+
 
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <div>Welcome to PandaNote!</div>
@@ -125,8 +142,8 @@ class SessionForm extends React.Component {
                 <input className="button submit" type="submit" value="Submit" />
               </div>
             </form>
-        </div>
       </Modal>
+    </div>
     );
   }
 }
