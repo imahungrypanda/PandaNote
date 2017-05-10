@@ -10,6 +10,15 @@ describe('Reducers', () => {
       expect(NotesReducer(undefined, {})).toEqual({ currentNote: null, allNotes: {} });
     });
 
+    it('should return the previous state if no action is matched', () => {});
+
     //Handle each action
+    describe('RECIEVE_ALL_NOTES', () => {});
+    describe('RECIEVE_NOTE', () => {});
+    describe('UPDATE_NOTE', () => {});
+    describe('MAKE_NOTE', () => {});
+    describe('DELETE_NOTE', () => {});
+    describe('CURRENT_NOTE', () => {});
+
   });
 });
