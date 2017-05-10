@@ -12,7 +12,8 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js",
+    "test": "jest"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
@@ -33,5 +34,10 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.0",
+    "jest": "^20.0.0",
+    "regenerator-runtime": "^0.10.5"
   }
 }
