@@ -10,7 +10,20 @@ describe('Reducers', () => {
       expect(NotesReducer(undefined, {})).toEqual({ currentNote: null, allNotes: {} });
     });
 
-    it('should return the previous state if no action is matched', () => {});
+    it('should return the previous state if no action is matched', () => {
+      const oldState = {
+        currentNote:
+          {
+            1:
+              {
+                title: "oldState note",
+                body: "Example of what a note might look like"
+              }
+          }
+        };
+      const newState = NotesReducer(oldState, { type: 'unmatched' });
+      expect(newState).toEqual(oldState);
+    });
 
     //Handle each action
     describe('RECIEVE_ALL_NOTES', () => {});
