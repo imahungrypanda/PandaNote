@@ -14,10 +14,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 87%;
-  background-image: url(https://res.cloudinary.com/dbf0xwan5/image/upload/q_40/v1489603020/splash_photo_edza7r.jpg);
+  height: 83%;
+  background-image: url(https://images.pexels.com/photos/293333/pexels-photo-293333.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
+  background-color: $green;
 
   h1 {
     border: 3px solid $dark-green;
@@ -26,7 +28,7 @@
     border-radius: 5px;
     padding: 13px 25px;
     font-family: 'Raleway', sans-serif;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: bold;
   }
 }
@@ -47,6 +49,7 @@
 .header-logo {
   display: flex;
   align-items: center;
+
   h1 {
     color: $tan;
   }
@@ -77,6 +80,19 @@ img.header-panda-logo {
 }
 
 .splash-footer {
-  height: 100px;
+  height: 200px;
   background-color: $green;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 50px;
+
+  .github-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .linkedin-img {
+    width: 55px;
+    height: 55px;
+  }
 }
