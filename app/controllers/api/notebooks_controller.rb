@@ -24,8 +24,8 @@ class Api::NotebooksController < ApplicationController
     @notebook = current_user.notebooks.find(params[:id])
 
     if @notebook
-      @notebook.destroy
       @notebook.notes.destroy_all
+      @notebook.destroy
       render :show
     else
       render( json: ["Nothing to delete"], status: 404)

@@ -1,6 +1,5 @@
 class Api::NotesController < ApplicationController
   def index
-    # debugger
     @notes = current_user.notes
     render :index
   end
@@ -8,6 +7,8 @@ class Api::NotesController < ApplicationController
   def show
     @note = current_user.notes.find(params[:id])
     render :show
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: e.to_s }, status: :not_found
   end
 
   def create
@@ -22,17 +23,20 @@ class Api::NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
 
     if @note.update_attributes(note_params)
       render :show
     else
       render( json: ["Unable to update note"], status: 503)
     end
+
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: e.to_s }, status: :not_found
   end
 
   def destroy
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
 
     if @note
       @note.delete
@@ -40,6 +44,8 @@ class Api::NotesController < ApplicationController
     else
       render( json: ["Nothing to delete"], status: 404)
     end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { error: e.to_s }, status: :not_found
   end
 
   private
