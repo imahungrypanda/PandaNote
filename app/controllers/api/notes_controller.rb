@@ -6,7 +6,7 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
     render :show
   end
 
