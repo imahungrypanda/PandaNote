@@ -36,21 +36,24 @@ Tags on the backend are stored in one table while another table joins the relati
 Deleting a tab proved to be one of the most difficult parts of the project. There were many ways that it could be done. I decided on just having one delete route for tags to keep things simple. The destroy controller took a `note_id` and a `tag_id`. It first finds a tag with the `tag_id` then finds all the tagging's that the tag has. If the tagging has more than just one tagging it only deletes the tagging otherwise it deletes the tagging and tag.
 
 ```Ruby
-def destroy
-  @tag = Tag.find(params[:id])
-  @tagging = @tag.taggings.select { |tagging| tagging.note_id == tag_params[:note_id].to_i }.first
-
-  if @tag.taggings.length > 1
-    @tagging.delete
-    render json: [ "keep" ]
-  elsif @tag
-    @tag.destroy
-    @tag.taggings.destroy_all
-    render json: @tag
-  else
-    render json: @tag.errors.full_messages, status: 422
+ def destroy
+    if tag.taggings.length > 1
+      tag.taggings.where(note_id: tag_params[:note_id].to_i).first.destroy
+      render json: [ "keep" ]
+    elsif @tag
+      @tag.destroy
+      render json: @tag
+    else
+      render json: @tag.errors.full_messages, status: 422
+    end
   end
-end
+
+
+  private
+
+  def tag
+    @tag ||= Tag.find(params[:id])
+  end
 ```
 
 ## Future Directions for the Project
