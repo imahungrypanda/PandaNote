@@ -50,6 +50,10 @@ class Api::NotesController < ApplicationController
 
   private
 
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
   def note_params
     params.require(:note).permit(:title, :body, :user_id, :notebook_id, :archived)
   end
