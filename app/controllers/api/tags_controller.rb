@@ -11,17 +11,15 @@ class Api::TagsController < ApplicationController
   end
 
   def show
-    @tag = Tag.find(params[:id])
-
     @tagged_notes = []
     notes = current_user.notes.includes(:taggings)
-    if @tag
+    if tag
       notes.each do |note|
-        @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == @tag.id }
+        @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == tag.id }
       end
       render :show
     else
-      render json: @tag.errors.full_messages, status: 422
+      render json: tag.errors.full_messages, status: 422
     end
   end
 
@@ -37,15 +35,11 @@ class Api::TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
-    @tagging = @tag.taggings.select { |tagging| tagging.note_id == tag_params[:note_id].to_i }.first
-
-    if @tag.taggings.length > 1
-      @tagging.delete
+    if tag.taggings.length > 1
+      tag.taggings.where(note_id: tag_params[:note_id].to_i).first.destroy
       render json: [ "keep" ]
     elsif @tag
       @tag.destroy
-      @tag.taggings.destroy_all
       render json: @tag
     else
       render json: @tag.errors.full_messages, status: 422
@@ -54,6 +48,10 @@ class Api::TagsController < ApplicationController
 
 
   private
+
+  def tag
+    @tag ||= Tag.find(params[:id])
+  end
 
   def tag_params
     params.require(:tag).permit(:tag_name, :note_id)
