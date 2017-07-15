@@ -5,7 +5,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-    @notebook = current_user.notebooks.find(params[:id])
+    notebook
     render :show
   end
 
@@ -21,10 +21,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = current_user.notebooks.find(params[:id])
-
-    if @notebook
-      @notebook.notes.destroy_all
+    if notebook
       @notebook.destroy
       render :show
     else
@@ -33,6 +30,10 @@ class Api::NotebooksController < ApplicationController
   end
 
   private
+
+  def notebook
+    @notebook ||= current_user.notebooks.find(params[:id])
+  end
 
   def notebook_params
     params.require(:notebook).permit(:title)

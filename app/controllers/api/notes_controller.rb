@@ -5,10 +5,11 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = current_user.notes.find(params[:id])
-    render :show
+    note
   rescue ActiveRecord::RecordNotFound => e
     render json: { error: e.to_s }, status: :not_found
+  else
+    render :show
   end
 
   def create
@@ -23,35 +24,25 @@ class Api::NotesController < ApplicationController
   end
 
   def update
-    @note = current_user.notes.find(params[:id])
-
-    if @note.update_attributes(note_params)
+    if note.update_attributes(note_params)
       render :show
     else
       render( json: ["Unable to update note"], status: 503)
     end
-
-  rescue ActiveRecord::RecordNotFound => e
-    render json: { error: e.to_s }, status: :not_found
   end
 
   def destroy
-    @note = current_user.notes.find(params[:id])
-
-    if @note
-      @note.delete
-      render :show
-    else
-      render( json: ["Nothing to delete"], status: 404)
-    end
+    note.delete
   rescue ActiveRecord::RecordNotFound => e
     render json: { error: e.to_s }, status: :not_found
+  else
+
+    render :delete
   end
 
   private
-
-  def not_found
-    raise ActionController::RoutingError.new('Not Found')
+  def note
+    @note ||= current_user.notes.find(params[:id])
   end
 
   def note_params
