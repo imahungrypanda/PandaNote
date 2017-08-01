@@ -11,5 +11,6 @@ RSpec.describe Notebook, type: :model do
   describe 'associations' do
     it { should belong_to(:user) }
     it { should have_many(:notes) }
+    it { should have_many(:notes).dependent(:destroy) }
   end
 end
