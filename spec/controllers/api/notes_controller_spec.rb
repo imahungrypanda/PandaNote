@@ -106,7 +106,7 @@ RSpec.describe Api::NotesController, type: :controller do
 
       it { should respond_with(200) }
       it { should render_template(:delete) }
-      it "should update a note" do
+      it "should delete a note" do
         expect(Note.all.length).to eq(1)
       end
     end
