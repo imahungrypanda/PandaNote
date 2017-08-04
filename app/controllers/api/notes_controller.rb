@@ -24,10 +24,12 @@ class Api::NotesController < ApplicationController
   end
 
   def update
-    if note.update_attributes(note_params)
-      render :show
-    else
+    begin
+      note.update_attributes(note_params)
+    rescue ActiveRecord::RecordNotFound
       render( json: ["Unable to update note"], status: 503)
+    else
+      render :show
     end
   end
 
@@ -36,7 +38,6 @@ class Api::NotesController < ApplicationController
   rescue ActiveRecord::RecordNotFound => e
     render json: { error: e.to_s }, status: :not_found
   else
-
     render :delete
   end
 
