@@ -12,6 +12,7 @@
     "npm": "3.10.10"
   },
   "scripts": {
+    "ww" : "webpack -w",
     "heroku-postbuild": "webpack --config webpack.config.prod.js",
     "test": "jest"
   },

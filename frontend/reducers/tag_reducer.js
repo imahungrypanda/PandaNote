@@ -16,6 +16,7 @@ const _nullTag = {
 const TagsReducer = (state = _nullTag, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
+  debugger
 
   switch (action.type) {
     case RECEIVE_TAGS:
@@ -37,7 +38,7 @@ const TagsReducer = (state = _nullTag, action) => {
       // debugger
       // tagCount = newState.allTags.filter(tag => tag.name === action.tag.name).length
       // if (tagCount === 1) {
-        newState.allTags.filter(tag => tag.name !== action.tag.name)
+        newState.allTags = newState.allTags.filter(tag => tag.name !== action.tag.name);
       // }
       return newState;
 
