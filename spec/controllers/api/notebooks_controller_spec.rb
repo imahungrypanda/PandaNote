@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::NotebooksController, type: :controller do
+  # enable response to have a body
   render_views
 
   let!(:user) { create(:user) }

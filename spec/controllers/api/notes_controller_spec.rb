@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::NotesController, type: :controller do
-  # enable view rendering because the routes all return JSON
+  # enable response to have a body
   render_views
 
   let!(:user) { create(:user) }
