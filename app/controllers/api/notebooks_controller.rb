@@ -5,8 +5,13 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-    notebook
-    render :show
+    begin
+      notebook
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { error: e.to_s }, status: :not_found
+    else
+      render :show
+    end
   end
 
   def create
@@ -21,11 +26,12 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    if notebook
-      @notebook.destroy
-      render :show
+    begin
+      notebook.destroy
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { error: e.to_s }, status: :not_found
     else
-      render( json: ["Nothing to delete"], status: 404)
+      render :show
     end
   end
 

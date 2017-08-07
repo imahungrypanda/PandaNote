@@ -11,15 +11,17 @@ class Api::TagsController < ApplicationController
   end
 
   def show
-    @tagged_notes = []
-    notes = current_user.notes.includes(:taggings)
-    if tag
+    begin
+      @tagged_notes = []
+      notes = current_user.notes.includes(:taggings)
+      tag
       notes.each do |note|
         @tagged_notes << note if note.taggings.any? { |tagging| tagging.tag_id == tag.id }
       end
-      render :show
+    rescue ActiveRecord::RecordNotFound => e
+      render( json: e.message, status: 404)
     else
-      render json: tag.errors.full_messages, status: 422
+      render :show
     end
   end
 
